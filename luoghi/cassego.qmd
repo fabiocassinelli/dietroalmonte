@@ -1,0 +1,35 @@
+---
+title: "Cassego"
+subtitle: "Frazione di Varese Ligure, alta Val di Vara (SP)"
+description: "Frazione di Varese Ligure che comprende la località di Chilinella. Nomi, dipendenze, ricerche collegate."
+date-modified: last-modified
+---
+
+::: {.column-margin}
+**Comune** Varese Ligure (SP)
+
+**Zona** Alta Val di Vara
+
+**Frazioni vicine** Scurtabò, Scioverana
+:::
+
+Cassego è, come Scurtabò, una delle frazioni del comune di Varese
+Ligure, nell'alta Val di Vara. Comprende la località di **Chilinella**,
+teatro dell'omicidio di Angeletto Servente nel 1577.
+
+<!-- DA COMPLETARE: dipendenze feudali ed ecclesiastiche di Cassego,
+     se diverse da quelle di Scurtabò; coordinate di Chilinella, se
+     riesci a individuarle, per costruire una mappa nella ricerca
+     collegata. -->
+
+## Nomi e attestazioni
+
+Da compilare.
+
+## Dipendenze
+
+Da compilare: signoria, pieve, podesteria, comune moderno.
+
+## Ricerche su questo luogo
+
+- [Il delitto di Chilinella](../ricerche/2026-09-delitto-chilinella-1577/index.qmd)

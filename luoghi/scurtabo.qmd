@@ -11,6 +11,8 @@ date-modified: last-modified
 **Parrocchia** San Cassinelli, diocesi di Brugnato
 
 **Feudo** Fieschi, poi Repubblica di Genova
+
+**Località** Scioverana
 :::
 
 ## Nomi e attestazioni
@@ -33,7 +35,8 @@ Da compilare, con rimandi alle [schede di famiglia](../famiglie/index.qmd).
 
 ```{=html}
 <!-- Sostituisci con un listing filtrato per categoria quando avrai
-     almeno due ricerche pubblicate su Scurtabò. -->
+     più ricerche pubblicate su Scurtabò. -->
 ```
 
 - [I Rossi di Scurtabò](../ricerche/2026-01-rossi-scurtabo/index.qmd)
+- [Il delitto di Chilinella](../ricerche/2026-09-delitto-chilinella-1577/index.qmd) — la vittima, Angeletto Servente, era di Scioverana

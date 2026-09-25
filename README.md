@@ -83,20 +83,6 @@ rifare da capo quella schermata.
    Invio, aspetti qualche secondo, fatto. Non ti servirà riaprire Git
    Bash per altro fino a quando non inizierai a scrivere davvero.
 
-7. **GNU Make** *(facoltativo)* — serve solo se vuoi usare i comandi
-   `make ...` di questo README così come sono scritti; ogni comando ha
-   un equivalente diretto (sezione 10), quindi puoi anche saltare
-   questo passaggio. Se lo vuoi:
-   <https://gnuwin32.sourceforge.net/packages/make.htm> → *Download* →
-   "Complete package, except sources" *Setup*. Installer grafico,
-   *Avanti* fino in fondo (annota la cartella d'installazione, di
-   solito `C:\Program Files (x86)\GnuWin32`). Questo pacchetto non si
-   aggiunge da solo al PATH: cerca nel menu Start **"Modifica le
-   variabili di ambiente per il tuo account"**, seleziona `Path` →
-   *Modifica* → *Nuovo*, incolla `C:\Program Files (x86)\GnuWin32\bin`
-   e conferma su tutte le finestre — anche questo resta tutto a click,
-   nessun comando da digitare.
-
 **Verifica.** Chiudi Git Bash e riaprilo — Windows aggiorna il PATH
 solo sulle finestre nuove — poi lancia uno per uno: `git --version`,
 `quarto --version`, `python --version`, `dot -V`. Se uno risulta "non
@@ -107,7 +93,7 @@ prestando attenzione a quella schermata.
 Poi, dentro la cartella del progetto, in Git Bash:
 
 ```bash
-quarto preview    # o: make anteprima, se hai installato make
+quarto preview
 ```
 
 Se l'anteprima si apre nel browser, hai finito l'installazione. Lo
@@ -210,7 +196,7 @@ Da quel momento ogni tua modifica compare su GitHub con il badge
 ### Marca temporale
 
 ```bash
-make timbra SLUG=rossi-scurtabo
+bash scripts/timbra.sh ricerche/2026-01-rossi-scurtabo
 ```
 
 Registra l'impronta dei sorgenti nella blockchain Bitcoin tramite
@@ -252,37 +238,46 @@ ricerca, così ottieni subito il DOI concept da mettere nel piè di pagina.
 ## 6. Il ciclo di una ricerca
 
 ```
-  make nuova SLUG=rossi-scurtabo
+  bash scripts/nuova-ricerca.sh rossi-scurtabo
         │  apre la cartella, il file da compilare e un ramo dedicato
         ▼
-  make anteprima            ← scrivi qui, con l'anteprima di fianco
+  quarto preview             ← scrivi qui, con l'anteprima di fianco
         │
         │  git commit -S frequenti durante la scrittura:
         │  sono la traccia del processo, e valgono più del risultato
         ▼
-  make timbra SLUG=rossi-scurtabo
+  bash scripts/timbra.sh ricerche/2026-01-rossi-scurtabo
         │  marca temporale sui sorgenti
         ▼
   git checkout main && git merge --no-ff ricerca/rossi-scurtabo
-  make pubblica MSG="Pubblico I Rossi di Scurtabò"
+  git add -A -- . ':!ricerche/*/_revisioni.md'
+  git commit -S -m "Pubblico I Rossi di Scurtabò"
+  git push
         │  ~90 secondi dopo la ricerca è online
         ▼
-  make rilascia SLUG=rossi-scurtabo VER=1.0
+  git tag -s v1.0-rossi-scurtabo -m "I Rossi di Scurtabò, v1.0"
+  git push --tags
         │  tag firmato → Release con PDF e .ots → Zenodo assegna il DOI
         ▼
-  metti il DOI nel front matter, make pubblica
+  metti il DOI nel front matter, committa e pusha di nuovo
 ```
 
-Per **revisionare** una ricerca già pubblicata: modifica, `make
-pubblica`, poi `make rilascia SLUG=... VER=1.1`. Le versioni precedenti
-restano su Zenodo con il loro DOI e nella cronologia in fondo alla
-pagina, che si genera da sola dal registro delle modifiche.
+Per **revisionare** una ricerca già pubblicata: modifica, committa e
+pusha, poi ripeti il tag con la versione successiva (`v1.1-...`) e
+pusha i tag. Le versioni precedenti restano su Zenodo con il loro DOI
+e nella cronologia in fondo alla pagina, che si genera da sola dal
+registro delle modifiche.
 
 Per **controllare** che la catena regga:
 
 ```bash
-make controlla
+git log -10 --show-signature --format='%h %G? %an %ad %s' --date=short
+find ricerche -name '*.ots' -exec sh -c 'echo; echo "$1"; ots verify "$1"' _ {} \;
 ```
+
+Il primo comando mostra se le tue ultime modifiche risultano firmate
+(colonna `%G?` a `G`), il secondo verifica ogni marca temporale che hai
+già registrato.
 
 ---
 
@@ -486,17 +481,17 @@ Cose che sono **opera tua al cento per cento**:
 
 ## 10. Riferimento dei comandi
 
+Tutti da lanciare in Git Bash, dentro la cartella del progetto.
+
 | Comando | Effetto |
 |---|---|
-| `make csl` | scarica Chicago come stile alternativo (facoltativo) |
-| `make nuova SLUG=x` | apre cartella, file e ramo di una nuova ricerca |
-| `make anteprima` | anteprima locale con ricarica automatica |
-| `make costruisci` | costruisce il sito in `_site/` |
-| `make timbra SLUG=x` | marca temporale OpenTimestamps sui sorgenti |
-| `make pubblica MSG="..."` | commit firmato + push → sito online |
-| `make rilascia SLUG=x VER=1.0` | tag firmato → Release → DOI Zenodo |
-| `make controlla` | verifica firme e marche temporali |
-| `make pulisci` | cancella i file generati |
+| `bash scripts/nuova-ricerca.sh x` | apre cartella, file e ramo di una nuova ricerca |
+| `quarto preview` | anteprima locale con ricarica automatica |
+| `quarto render` | costruisce il sito in `_site/` |
+| `bash scripts/timbra.sh ricerche/x` | marca temporale OpenTimestamps sui sorgenti |
+| `git add -A -- . ':!ricerche/*/_revisioni.md'`<br>`git commit -S -m "..."`<br>`git push` | commit firmato + push → sito online |
+| `git tag -s v1.0-x -m "..."`<br>`git push --tags` | tag firmato → Release → DOI Zenodo |
+| `git log --show-signature ...` (sezione 6) | verifica firme e marche temporali |
 
 ---
 
@@ -545,7 +540,8 @@ dietroalmonte/
 
 **`could not find file _revisioni.md`** — Quarto risolve gli `include`
 prima di eseguire lo script che genera la cronologia. Ogni cartella di
-ricerca deve contenere un `_revisioni.md`, anche vuoto; `make nuova` lo
+ricerca deve contenere un `_revisioni.md`, anche vuoto;
+`scripts/nuova-ricerca.sh` lo
 crea da sé. Se manca: `touch ricerche/NOME/_revisioni.md`.
 
 **La mappa non compare** — manca
@@ -574,7 +570,7 @@ l'indentazione sbagliata.
 
 | | |
 |---|---|
-| **1** | ORCID, dominio, repository online, `make anteprima` funzionante, firma configurata |
+| **1** | ORCID, dominio, repository online, `quarto preview` funzionante, firma configurata |
 | **2** | `metodo.qmd` e `fonti/index.qmd` compilati davvero. Zotero collegato. Foto rinominate |
 | **3** | Zenodo collegato, prima Release, DOI concept nel piè di pagina. Comunicazioni agli archivi |
 | **4** | **Pubblica la prima ricerca.** Scegline una corta e matura, non l'opera maggiore: serve a far girare la catena almeno una volta intera |
