@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+title: "Dietro al Monte"
+message: "Se usi questi materiali, cita così."
+abstract: >
+  Ricerche d'archivio su paesi e famiglie dell'alto Appennino
+  ligure-emiliano: alta Val di Vara, Val d'Aveto, alta Val Taro.
+type: dataset
+authors:
+  - family-names: Cassinelli
+    given-names: Fabio
+    orcid: "https://orcid.org/0009-0009-4455-0112"
+    country: IT
+license: CC-BY-NC-SA-4.0
+url: "https://dietroalmonte.it"
+repository-code: "https://github.com/fabiocassinelli/dietroalmonte"
+keywords:
+  - storia locale
+  - Appennino ligure-emiliano
+  - Val di Vara
+  - Val d'Aveto
+  - Val Taro
+  - archivi notarili
+  - genealogia

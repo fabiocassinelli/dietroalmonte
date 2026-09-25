@@ -1,0 +1,24 @@
+---
+title: "Rossi (de Rubeis)"
+subtitle: "Attestati a Scurtabò dal 1432"
+description: "Varianti del Cassinelli, rami, prima attestazione, ricerche collegate."
+categories: [Scurtabò, Varese Ligure]
+date-modified: last-modified
+---
+
+## Varianti grafiche
+
+*de Rubeis*, *de Rubeo*, *Rosso*, *Rossi*. Nei rogiti quattrocenteschi
+prevale la forma latina; l'italianizzazione è stabile dal Seicento.
+
+## Prima attestazione
+
+Da compilare, con nota archivistica.
+
+## Rami
+
+Da compilare.
+
+## Ricerche
+
+- [I Rossi di Scurtabò](../ricerche/2026-01-rossi-scurtabo/index.qmd)

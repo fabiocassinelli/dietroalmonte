@@ -1,0 +1,285 @@
+/*-- scss:defaults --*/
+
+// ─────────────────────────────────────────────────────────────
+// Dietro al Monte — sistema di token
+//
+// Colore. L'ancoraggio è l'ardesia del Levante ligure: la pietra
+// dei tetti, delle lapidi e delle iscrizioni. Il fondo è carta
+// fredda, non crema. L'unico accento è l'ocra delle rubriche dei
+// registri notarili, riservato ai link e ai richiami di nota:
+// il colore segnala "qui c'è un rimando", non decora.
+// ─────────────────────────────────────────────────────────────
+
+$carta:         #EBEBE5;  // fondo pagina, carta vergata fredda
+$carta-alta:    #F5F5F0;  // superfici sollevate: callout, tabelle
+$inchiostro:    #23272C;  // testo
+$ardesia:       #39434E;  // struttura: navbar, footer, filetti
+$ardesia-tenue: #6E7883;  // metadati, note a margine
+$rubrica:       #7A5615;  // accento unico: link, richiami di nota
+$rubrica-viva:  #A8791C;  // stato hover
+$verderame:     #2E6157;  // solo per dati: mappe, grafici, alberi
+
+$body-bg:    $carta;
+$body-color: $inchiostro;
+$link-color: $rubrica;
+$link-hover-color: $rubrica-viva;
+
+// Tipografia. Fraunces per i titoli (old-style ad alto contrasto,
+// con carattere proprio), Spectral per il testo continuo: nato per
+// lo schermo, stretto abbastanza da tenere 70 battute in 720px,
+// con accenti italiani disegnati bene.
+$font-family-serif:      "Spectral", "Iowan Old Style", Georgia, serif;
+$font-family-sans-serif: "Fraunces", "Spectral", Georgia, serif;
+$headings-font-family:   "Fraunces", Georgia, serif;
+$font-family-monospace:  "SFMono-Regular", Consolas, monospace;
+
+$font-size-root:   19px;
+$font-family-base: $font-family-serif;   // Bootstrap usa questa
+$body-font-family: $font-family-serif;   // Quarto usa questa
+$line-height-base: 1.68;
+
+$h1-font-size: 2.45rem;
+$h2-font-size: 1.55rem;
+$h3-font-size: 1.18rem;
+$headings-font-weight: 600;
+$headings-line-height: 1.18;
+
+$navbar-bg: $ardesia;
+$navbar-fg: #DDE1E5;
+$navbar-hl: #FFFFFF;
+$footer-bg: $ardesia;
+$footer-fg: #C3C9D0;
+
+$border-color: #CFCFC6;
+$table-border-color: $border-color;
+$code-bg: $carta-alta;
+$code-color: $ardesia;
+
+/*-- scss:rules --*/
+
+// ── Impianto ────────────────────────────────────────────────────
+
+body {
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, .navbar-title {
+  font-variation-settings: "opsz" 40;
+  letter-spacing: -0.008em;
+}
+
+h1.title {
+  font-variation-settings: "opsz" 120;
+  line-height: 1.1;
+  margin-bottom: 0.2rem;
+}
+
+.subtitle {
+  font-family: "Spectral", serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.22rem;
+  color: $ardesia;
+  line-height: 1.4;
+  margin-bottom: 1.4rem;
+}
+
+// Un filetto d'ardesia sotto i titoli di sezione: segna la giuntura
+// fra le parti dell'argomentazione, non è un ornamento.
+h2 {
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid $border-color;
+  margin-top: 2.8rem;
+}
+
+a { text-decoration-thickness: 1px; text-underline-offset: 0.16em; }
+
+// ── Apparato critico ────────────────────────────────────────────
+// Il centro racconta, i margini documentano. I richiami di nota sono
+// gli unici elementi ocra dentro il testo continuo: l'occhio impara
+// subito che l'ocra significa "c'è una prova dietro".
+
+a.footnote-ref sup,
+.footnote-ref {
+  color: $rubrica;
+  font-weight: 600;
+  font-size: 0.72em;
+  padding: 0 0.08em;
+}
+
+#footnotes,
+div.footnotes {
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: $ardesia;
+  border-top: 2px solid $ardesia;
+  margin-top: 3rem;
+  padding-top: 1rem;
+}
+
+.column-margin {
+  font-size: 0.79rem;
+  line-height: 1.5;
+  color: $ardesia-tenue;
+  border-left: 2px solid $border-color;
+  padding-left: 0.8rem;
+}
+
+.column-margin .figure-caption,
+.figure-caption,
+figcaption {
+  font-size: 0.79rem;
+  color: $ardesia-tenue;
+  font-style: italic;
+}
+
+// ── Regesti e trascrizioni ──────────────────────────────────────
+// Richiamano il taglio della pietra: fondo più chiaro, filetto
+// d'ardesia a sinistra, corpo ridotto. Stanno chiusi per default.
+
+.callout {
+  background: $carta-alta;
+  border: 1px solid $border-color;
+  border-left: 3px solid $ardesia;
+  border-radius: 0;
+}
+
+.callout.callout-style-simple { padding: 0.2rem 0.6rem; }
+
+.callout-title {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 0.98rem;
+  background: transparent !important;
+}
+
+.trascrizione {
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.trascrizione blockquote {
+  border-left: none;
+  padding-left: 0;
+  font-style: normal;
+  color: $inchiostro;
+}
+
+// Convenzioni diplomatiche: scioglimenti in corsivo, lacune in
+// tondo fra parentesi quadre. Classi da usare nelle trascrizioni.
+.scioglimento { font-style: italic; }
+.lacuna       { color: $ardesia-tenue; }
+
+// ── Metadati dell'articolo ──────────────────────────────────────
+
+.quarto-title-meta,
+.quarto-title-meta-heading,
+.quarto-title-meta-contents {
+  font-family: "Spectral", serif;
+  font-size: 0.82rem;
+  color: $ardesia-tenue;
+}
+
+.quarto-categories .quarto-category {
+  background: transparent;
+  border: 1px solid $border-color;
+  border-radius: 0;
+  font-size: 0.74rem;
+  color: $ardesia;
+  opacity: 1;
+}
+
+// Il blocco "Come citare" generato da Quarto: è la firma della
+// ricerca, quindi ha il peso visivo di un colophon.
+#quarto-citation,
+.quarto-appendix-contents {
+  font-size: 0.84rem;
+  color: $ardesia;
+}
+
+.quarto-appendix {
+  border-top: 2px solid $ardesia;
+  background: transparent;
+}
+
+// ── Elenco delle ricerche ───────────────────────────────────────
+
+.quarto-listing-default .listing-item {
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 1.3rem;
+  margin-bottom: 1.3rem;
+}
+
+.listing-title { font-family: "Fraunces", serif; font-size: 1.28rem; }
+.listing-subtitle { font-style: italic; color: $ardesia; }
+.listing-date, .listing-author { color: $ardesia-tenue; font-size: 0.82rem; }
+
+// ── Home ────────────────────────────────────────────────────────
+
+.apertura {
+  max-width: 34rem;
+  margin: 2.5rem 0 3.5rem;
+}
+
+.apertura p {
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: $ardesia;
+}
+
+.valli {
+  border-top: 2px solid $ardesia;
+  border-bottom: 1px solid $border-color;
+  padding: 0.9rem 0;
+  margin: 2.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+  font-family: "Fraunces", serif;
+  font-size: 0.92rem;
+  color: $ardesia;
+}
+
+// ── Dati: mappe, alberi, grafici ────────────────────────────────
+
+.mappa {
+  height: 460px;
+  border: 1px solid $ardesia;
+  margin: 1.6rem 0;
+}
+
+.leaflet-container { background: $carta-alta; font-family: "Spectral", serif; }
+
+figure svg { max-width: 100%; height: auto; }
+
+// ── Tabelle ─────────────────────────────────────────────────────
+
+table { font-size: 0.88rem; }
+thead th { border-bottom: 2px solid $ardesia !important; font-family: "Fraunces", serif; }
+
+// ── Qualità di base ─────────────────────────────────────────────
+
+:focus-visible {
+  outline: 2px solid $rubrica-viva;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+@media (max-width: 991px) {
+  :root { font-size: 17px; }
+  .column-margin {
+    border-left: none;
+    border-top: 1px solid $border-color;
+    padding: 0.6rem 0 0 0;
+    margin: 1rem 0;
+  }
+}
+
+@media print {
+  .navbar, .sidebar, #quarto-margin-sidebar { display: none; }
+  body { background: #fff; font-size: 11pt; }
+}

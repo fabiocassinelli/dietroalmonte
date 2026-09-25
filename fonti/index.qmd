@@ -1,0 +1,90 @@
+---
+title: "Fonti"
+subtitle: "Gli archivi e i fondi su cui si regge questo sito"
+description: "Tavola delle abbreviazioni e schede dei fondi consultati."
+date-modified: last-modified
+---
+
+Questa pagina serve a due cose: sciogliere le sigle che compaiono nelle
+note e dire, per ogni fondo, che cosa contiene e in che stato l'ho
+trovato. Chi volesse verificare o proseguire una ricerca dovrebbe potersi
+muovere in sala di studio partendo solo da qui.
+
+## Tavola delle abbreviazioni
+
+| Sigla | Istituto |
+|---|---|
+| ACS | Archivio Centrale dello Stato, Roma |
+| APS | Archivio Parrocchiale di Scurtabò |
+| ASGe | Archivio di Stato di Genova |
+| ASPr | Archivio di Stato di Parma |
+| ASSp | Archivio di Stato di La Spezia |
+| ASDGe | Archivio Storico Diocesano di Genova |
+| ASDBr | Archivio Storico Diocesano di Brugnato |
+
+| Sigla | Serie ricorrente |
+|---|---|
+| NA | Notai Antichi (ASGe) |
+| NI | Notai Ignoti (ASGe) |
+| SR | Stati d'anime (archivi parrocchiali) |
+| VP | Visite pastorali |
+
+## Come leggere una nota
+
+> ASGe, *Notai Antichi*, 1123, notaio Antonio da Cogorno, doc. 47
+> (1432 aprile 12).
+
+Nell'ordine: sigla dell'istituto, fondo in corsivo, unità archivistica
+(filza, registro o busta), eventuale intitolazione, documento, data
+topica e cronica fra parentesi. Quando cito una carta e non un documento
+numerato uso la forma `c. 12r` / `cc. 12r–13v`.
+
+Alla seconda citazione della stessa unità la nota si accorcia
+(`ASGe, *Notai Antichi*, 1123, doc. 51`), alla ripetizione immediata
+diventa `Ibid.`
+
+## Schede dei fondi
+
+### ASGe, Notai Antichi
+
+**Consistenza consultata** filze 1100–1180.
+**Estremi cronologici** 1420–1465.
+**Stato di conservazione** buono; alcune filze con danni da umidità sui
+margini esterni.
+**Strumenti di corredo** inventario a stampa in sala di studio; indice
+dei notai per anno.
+**Che cosa ci ho trovato** rogiti di divisione, dotali e locazioni di
+bestiame relativi all'alta Val di Vara.
+**Riproduzioni** fotografie eseguite con mezzi propri, autodichiarazione
+depositata in sala di studio.
+
+### APS, Registri parrocchiali di Scurtabò
+
+**Consistenza consultata** battesimi 1595–1810, matrimoni 1596–1810,
+morti 1620–1810.
+**Lacune** battesimi 1630–1638; morti 1704–1711.
+**Stato di conservazione** discreto.
+**Accesso** su appuntamento con il parroco.
+
+## Uso delle riproduzioni
+
+Le immagini di documenti eventualmente pubblicate qui sono state
+acquisite legittimamente in sala di studio con mezzi propri e sono
+divulgate senza scopo di lucro, per finalità di studio e ricerca,
+su un sito ad accesso gratuito e privo di inserzioni pubblicitarie
+(art. 108, commi 3 e 3-bis, d.lgs. 42/2004, come modificato dalla
+l. 124/2017; D.M. 21 marzo 2024, n. 108). Agli istituti conservatori
+è stata data comunicazione scritta dell'intenzione di pubblicare, e a
+ciascuno è consegnata copia degli elaborati.
+
+::: {.callout-note collapse="true" appearance="simple"}
+## Comunicazioni inviate agli istituti
+
+| Istituto | Data comunicazione | Riscontro |
+|---|---|---|
+| ASGe | — | — |
+| ASSp | — | — |
+| ASPr | — | — |
+
+Tieni aggiornata questa tabella: è la prova che hai adempiuto.
+:::

@@ -1,0 +1,20 @@
+---
+title: "Ricerche"
+subtitle: "Tutte le ricerche pubblicate, dalla più recente"
+toc: false
+listing:
+  contents: "*/index.qmd"
+  type: default
+  sort: "date desc"
+  categories: cloud
+  feed:
+    title: "Dietro al Monte — nuove ricerche"
+    items: 20
+  fields: [date, title, subtitle, description, categories, reading-time]
+  date-format: "D MMMM YYYY"
+  page-size: 20
+---
+
+Ogni ricerca ha un identificatore DOI permanente, una cronologia delle
+revisioni e una marca temporale verificabile. I criteri sono spiegati
+nel [metodo](../metodo.qmd).

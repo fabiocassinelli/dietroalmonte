@@ -1,0 +1,21 @@
+{
+  "type": "FeatureCollection",
+  "name": "luoghi-rossi-scurtabo",
+  "features": [
+    { "type": "Feature",
+      "properties": { "nome": "Scurtabò", "nota": "Casa, aia e castagneti dei de Rubeis, 1432" },
+      "geometry": { "type": "Point", "coordinates": [9.6103, 44.3721] } },
+    { "type": "Feature",
+      "properties": { "nome": "Varese Ligure", "nota": "Sede del notaio Antonio da Cogorno" },
+      "geometry": { "type": "Point", "coordinates": [9.5878, 44.3742] } },
+    { "type": "Feature",
+      "properties": { "nome": "Monte Penna", "nota": "Pascolo assegnato a Giovanni nella divisione del 1432" },
+      "geometry": { "type": "Point", "coordinates": [9.4800, 44.4450] } },
+    { "type": "Feature",
+      "properties": { "nome": "Santa Maria del Taro", "nota": "Territorio in cui ricade il pascolo" },
+      "geometry": { "type": "Point", "coordinates": [9.5108, 44.4344] } },
+    { "type": "Feature",
+      "properties": { "nome": "Sopralacroce", "nota": "Val d'Aveto, comune di Borzonasca" },
+      "geometry": { "type": "Point", "coordinates": [9.3903, 44.4189] } }
+  ]
+}

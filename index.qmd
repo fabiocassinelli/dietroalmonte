@@ -1,0 +1,42 @@
+---
+pagetitle: "Dietro al Monte"
+description-meta: "Ricerche d'archivio su paesi e famiglie dell'alto Appennino ligure-emiliano: Scurtabò, Sopralacroce, Santa Maria del Taro."
+toc: false
+listing:
+  id: ultime
+  contents: ricerche
+  type: default
+  sort: "date desc"
+  max-items: 5
+  fields: [date, title, subtitle, description, categories]
+  date-format: "MMMM YYYY"
+---
+
+::: {.apertura}
+# Dietro al Monte {.unnumbered}
+
+Ricerche condotte sui fondi notarili, parrocchiali e feudali degli archivi
+italiani, per ricostruire come sono vissute le famiglie dei paesi
+dell'alto Appennino ligure-emiliano fra il Quattrocento e l'Ottocento.
+
+Ogni ricerca dichiara le proprie fonti documento per documento, resta
+modificabile nel tempo e conserva la storia delle proprie revisioni.
+:::
+
+::: {.valli}
+[Alta Val di Vara](luoghi/index.qmd) · [Val d'Aveto](luoghi/index.qmd) · [Alta Val Taro](luoghi/index.qmd)
+:::
+
+## Ultime ricerche
+
+::: {#ultime}
+:::
+
+[Tutte le ricerche →](ricerche/index.qmd)
+
+## Da dove cominciare
+
+Se cerchi un paese, parti dalle [schede dei luoghi](luoghi/index.qmd).
+Se cerchi un Cassinelli, dalle [schede delle famiglie](famiglie/index.qmd).
+Se vuoi sapere su quali fondi si regge tutto questo e come vengono
+trascritti i documenti, leggi il [metodo](metodo.qmd).

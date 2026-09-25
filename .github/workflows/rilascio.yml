@@ -1,0 +1,76 @@
+name: Rilascio di una ricerca
+
+# Si attiva sui tag del tipo  v1.0-rossi-scurtabo
+# Produce: PDF citabile + marca temporale OpenTimestamps, allegati alla
+# Release. Zenodo, se collegato al repository, intercetta la Release e
+# assegna il DOI automaticamente.
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  rilascia:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Ricava lo slug della ricerca dal tag
+        id: slug
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          SLUG="${TAG#*-}"
+          DIR=$(find ricerche -maxdepth 1 -type d -name "*${SLUG}" | head -n1)
+          if [ -z "$DIR" ]; then
+            echo "Nessuna ricerca corrisponde al tag $TAG" >&2; exit 1
+          fi
+          echo "dir=$DIR"   >> "$GITHUB_OUTPUT"
+          echo "slug=$SLUG" >> "$GITHUB_OUTPUT"
+
+      - name: PDF citabile
+        continue-on-error: true
+        run: |
+          python3 scripts/revisioni.py
+          quarto render "${{ steps.slug.outputs.dir }}/index.qmd" \
+            --to typst --output "${{ steps.slug.outputs.slug }}.pdf"
+          mkdir -p rilascio
+          mv "${{ steps.slug.outputs.dir }}/${{ steps.slug.outputs.slug }}.pdf" rilascio/ \
+            || find . -name "${{ steps.slug.outputs.slug }}.pdf" -exec mv {} rilascio/ \;
+
+      - name: Archivio dei sorgenti
+        run: |
+          mkdir -p rilascio
+          tar czf "rilascio/${{ steps.slug.outputs.slug }}-sorgenti.tar.gz" \
+            "${{ steps.slug.outputs.dir }}" fonti/ assets/csl/
+
+      - name: Marca temporale OpenTimestamps
+        continue-on-error: true
+        run: |
+          pip install --quiet opentimestamps-client
+          for f in rilascio/*; do ots stamp "$f"; done
+
+      - name: Impronte SHA-256
+        run: |
+          cd rilascio && sha256sum * > SHA256SUMS.txt && cat SHA256SUMS.txt
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: rilascio/*
+          generate_release_notes: true
+          body: |
+            Versione citabile di **${{ steps.slug.outputs.slug }}**.
+
+            Allegati: PDF, sorgenti, marche temporali OpenTimestamps (`.ots`)
+            e impronte SHA-256.
+
+            Verifica della data:
+            `ots verify <file>.ots`

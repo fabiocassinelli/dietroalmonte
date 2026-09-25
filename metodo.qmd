@@ -1,0 +1,131 @@
+---
+title: "Metodo"
+subtitle: "Criteri di edizione, licenza e catena di prova"
+description: "Come sono trascritti i documenti, come citare le ricerche e come verificare autore e data di ogni testo."
+date-modified: last-modified
+---
+
+## Criteri di edizione
+
+**Trascrizione.** Conservo la grafia originale. Sciolgo le abbreviazioni
+senza segnalarle quando lo scioglimento è certo; quando è congetturale
+lo segnalo in nota. Distinguo *u* e *v* secondo l'uso moderno,
+normalizzo maiuscole e punteggiatura, conservo le oscillazioni
+ortografiche dei nomi propri.
+
+**Segni convenzionali.**
+
+| Segno | Significato |
+|---|---|
+| `[ ]` | integrazione dell'editore |
+| `[...]` | lacuna non integrabile |
+| `⟨ ⟩` | espunzione |
+| `(?)` | lettura incerta |
+| `|` | fine riga, nelle trascrizioni diplomatiche |
+
+**Date.** Riporto la data come compare nel documento e ne do in nota la
+riduzione allo stile moderno. Nei documenti genovesi tengo conto dello
+stile della Natività.
+
+**Nomi.** In testo uso la forma italiana moderna; nelle note e nelle
+trascrizioni la forma del documento. Le varianti sono raccolte nelle
+[schede di famiglia](famiglie/index.qmd).
+
+**Monete e misure.** Lascio i valori nell'unità del documento e do
+l'equivalenza in nota solo quando serve al ragionamento.
+
+## Che cosa è mio e che cosa no
+
+I testi, le mappe, gli alberi genealogici, i grafici e le trascrizioni
+di questo sito sono opera mia. Le fonti d'archivio non lo sono: sono
+beni culturali pubblici, citati con la loro segnatura perché chiunque
+possa andare a controllare.
+
+Tutto il sito è pubblicato sotto licenza
+[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it):
+puoi copiare e rielaborare questi materiali per scopi non commerciali,
+a condizione di citarmi e di mantenere la stessa licenza.
+
+## Come citare
+
+Ogni ricerca ha in fondo un riquadro *Citazione* con la forma completa e
+il DOI. La forma generale è:
+
+> Fabio Cassinelli, «Titolo della ricerca», *Dietro al Monte*, versione
+> 1.2, 14 marzo 2026, DOI 10.5281/zenodo.XXXXXXX.
+
+Cita sempre il numero di versione: le ricerche cambiano quando emergono
+documenti nuovi, e il DOI di versione punta allo stato esatto che hai
+letto.
+
+## Paternità e data certa
+
+Non chiedo di fidarvi. Ogni testo di questo sito porta con sé cinque
+tracce indipendenti, tutte verificabili da chiunque senza passare da me.
+
+### 1. Firma crittografica
+
+Ogni modifica è registrata in un repository Git pubblico e firmata con
+una chiave crittografica che possiedo solo io. GitHub verifica la firma
+e marca ogni modifica come *Verified*. Chi controlla vede non solo il
+testo finale, ma l'intero processo di scrittura, giorno per giorno.
+
+Repository: <https://github.com/fabiocassinelli/dietroalmonte>
+
+### 2. Marca temporale su blockchain
+
+Al momento della pubblicazione, l'impronta digitale di ogni file viene
+registrata con [OpenTimestamps](https://opentimestamps.org) nella
+blockchain Bitcoin. Nel repository, accanto a ogni ricerca, trovi un
+file `.ots`. Per verificarlo:
+
+```bash
+pip install opentimestamps-client
+ots verify ricerche/NOME-RICERCA/index.qmd.ots
+```
+
+Il comando restituisce la data in cui quel testo, esattamente in quella
+forma, esisteva già. Nessuno — me compreso — può alterarla.
+
+### 3. DOI e archiviazione permanente
+
+Ogni versione definitiva è depositata su
+[Zenodo](https://zenodo.org), il repository del CERN, che ne conserva
+una copia permanente e le assegna un DOI legato al mio identificativo
+[ORCID](https://orcid.org/0009-0009-4455-0112). È la forma di deposito
+riconosciuta dalla comunità scientifica internazionale.
+
+### 4. Marca temporale qualificata
+
+Le ricerche principali sono inoltre corredate di marca temporale
+qualificata ai sensi del Regolamento eIDAS (UE) 910/2014 e del Codice
+dell'Amministrazione Digitale, rilasciata da un prestatore di servizi
+fiduciari accreditato. È lo strato con pieno valore probatorio davanti
+a un'autorità giudiziaria italiana ed europea.
+
+### 5. Archiviazione di terze parti
+
+Il repository è archiviato integralmente, con tutta la sua storia, da
+[Software Heritage](https://www.softwareheritage.org) e le pagine sono
+depositate nella [Wayback Machine](https://web.archive.org).
+
+::: {.callout-note collapse="true" appearance="simple"}
+## Verificare una ricerca in tre comandi
+
+```bash
+git clone https://github.com/fabiocassinelli/dietroalmonte
+cd dietroalmonte
+git log --show-signature -- ricerche/NOME-RICERCA/
+ots verify ricerche/NOME-RICERCA/index.qmd.ots
+```
+
+Il primo comando ti dà il testo, il secondo chi l'ha scritto e quando,
+il terzo una data indipendente da GitHub e da me.
+:::
+
+## Errori
+
+Se trovi un errore, scrivimi: lo correggo, e la correzione resta
+visibile nella cronologia delle revisioni in fondo alla ricerca. Le
+versioni precedenti non spariscono mai — restano nel repository e su
+Zenodo, con il loro DOI.

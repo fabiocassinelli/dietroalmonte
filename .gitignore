@@ -1,0 +1,12 @@
+_site/
+.quarto/
+_freeze/
+rilascio/
+
+.DS_Store
+*.swp
+.venv/
+
+/.quarto/
+
+**/*.quarto_ipynb

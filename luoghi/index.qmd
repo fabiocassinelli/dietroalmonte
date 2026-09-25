@@ -1,0 +1,14 @@
+---
+title: "Luoghi"
+subtitle: "Schede dei paesi e delle valli studiate"
+toc: false
+listing:
+  contents: "*.qmd"
+  type: grid
+  sort: "title"
+  fields: [title, subtitle, description]
+---
+
+Ogni scheda raccoglie quello che sappiamo di un insediamento — nomi
+antichi, dipendenze feudali ed ecclesiastiche, famiglie attestate — e
+rimanda alle ricerche che lo riguardano.

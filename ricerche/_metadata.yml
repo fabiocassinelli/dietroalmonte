@@ -1,0 +1,18 @@
+# Impostazioni ereditate da tutte le ricerche.
+# Modificando qui, cambi il comportamento di tutti gli articoli insieme.
+author:
+  - name: Fabio Cassinelli
+    orcid: 0009-0009-4455-0112
+    url: https://dietroalmonte.it/chi-sono.html
+license: "CC BY-NC-SA 4.0"
+copyright:
+  holder: Fabio Cassinelli
+date-modified: last-modified
+format:
+  html:
+    toc: true
+    reading-time: true
+    citation: true
+    other-links:
+      - text: Come citare e verificare questa pagina
+        href: ../../metodo.qmd

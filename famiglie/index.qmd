@@ -1,0 +1,14 @@
+---
+title: "Famiglie"
+subtitle: "Schede dei cognomi ricostruiti"
+toc: false
+listing:
+  contents: "*.qmd"
+  type: table
+  sort: "title"
+  fields: [title, subtitle, categories]
+---
+
+Le schede seguono il Cassinelli attraverso i documenti: prima attestazione,
+varianti grafiche, rami, spostamenti. Sono pagine vive, che si arricchiscono
+a ogni nuova ricerca.

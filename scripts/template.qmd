@@ -1,0 +1,75 @@
+---
+title: "TITOLO"
+subtitle: "SOTTOTITOLO: dove, quando, chi"
+description: >
+  Due righe che dicono a un lettore non specialista perché questa ricerca
+  esiste. Compaiono nell'elenco delle ricerche e nelle anteprime social.
+date: DATA
+categories: [luogo, famiglia, tipologia di fonte, secolo]
+doi: ""
+citation:
+  type: webpage
+  container-title: "Dietro al Monte"
+  url: https://dietroalmonte.it/ricerche/SLUG/
+abstract: >
+  Cinque-otto righe in tono accademico: cosa si sapeva, quali documenti
+  hai trovato, cosa cambiano. Questo è il testo che verrà depositato su
+  Zenodo e letto da chi cita.
+# Togli il commento se usi una mappa Leaflet:
+# format:
+#   html:
+#     include-in-header: ../../assets/leaflet.html
+---
+
+<!-- 1. AGGANCIO — Un fatto concreto, una scena, una persona.
+     Due o tre paragrafi senza apparato pesante. Il lettore deve
+     capire perché dovrebbe continuare. -->
+
+<!-- 2. IL PROBLEMA — Cosa dice la storiografia esistente, cosa non torna. -->
+
+## Che cosa si sapeva
+
+<!-- 3. I DOCUMENTI — Uno per uno, ciascuno con il suo regesto richiudibile. -->
+
+## I documenti
+
+### Titolo del primo documento
+
+Testo, con citazione automatica in nota:
+[@SIGLA_FONDO_UNITA, doc. 00 (AAAA mese GG)]
+
+Nota discorsiva, per il commento che non è una citazione:[^nota]
+
+[^nota]: Il contenuto della nota.
+
+::: {.callout-note collapse="true" appearance="simple" class="trascrizione"}
+## Regesto e trascrizione — SIGLA, fondo, unità, doc.
+
+**AAAA mese GG, luogo.**
+
+*Regesto.* Riassunto in una frase, con i nomi in forma moderna.
+
+*Trascrizione.*
+
+> Testo latino...
+
+*Note alla trascrizione.* Stato della carta, lacune, letture incerte.
+:::
+
+<!-- 4. LA RICOSTRUZIONE — qui vanno albero, mappa, grafico. -->
+
+## La ricostruzione
+
+<!-- 5. CONCLUSIONE E PISTE APERTE — dire cosa NON sai è ciò che
+     distingue una ricerca da una pagina di genealogia dilettantesca. -->
+
+## Piste aperte
+
+-
+
+## Fonti archivistiche e bibliografia
+
+::: {#refs}
+:::
+
+{{< include _revisioni.md >}}

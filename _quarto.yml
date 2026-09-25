@@ -1,0 +1,90 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "**/*.qmd"
+    - "!scripts/"        # scripts/template.qmd è un modello, non una pagina
+  pre-render:
+    - scripts/revisioni.py
+  resources:
+    - CNAME
+    - CITATION.cff
+    - "**/*.ots"
+
+website:
+  title: "Dietro al Monte"
+  description: "Ricerche d'archivio su paesi e famiglie tra Vara, Aveto e Taro"
+  site-url: https://dietroalmonte.it
+  favicon: assets/favicon.png
+  search:
+    location: navbar
+    type: overlay
+  navbar:
+    title: "Dietro al Monte"
+    left:
+      - href: ricerche/index.qmd
+        text: Ricerche
+      - href: luoghi/index.qmd
+        text: Luoghi
+      - href: famiglie/index.qmd
+        text: Famiglie
+      - href: fonti/index.qmd
+        text: Fonti
+      - href: metodo.qmd
+        text: Metodo
+    right:
+      - href: chi-sono.qmd
+        text: Chi sono
+      - icon: rss
+        href: ricerche/index.xml
+        aria-label: Feed RSS delle ricerche
+  page-footer:
+    border: false
+    left: |
+      Testi e immagini di Fabio Cassinelli, salvo diversa indicazione.
+      Licenza [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it).
+    center: |
+      [ORCID 0009-0009-4455-0112](https://orcid.org/0009-0009-4455-0112)
+    right: |
+      [Come citare e verificare](/metodo.qmd)
+
+format:
+  html:
+    theme:
+      - cosmo
+      - assets/theme.scss
+    include-in-header: assets/fonts.html
+    toc: true
+    toc-title: "In questa pagina"
+    toc-depth: 3
+    toc-location: left
+    number-sections: false
+    anchor-sections: true
+    citations-hover: true
+    footnotes-hover: true
+    link-external-newwindow: true
+    link-external-icon: false
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    code-copy: false
+    lang: it
+    grid:
+      sidebar-width: 260px
+      body-width: 720px
+      margin-width: 300px
+      gutter-width: 1.6rem
+
+# Più file bibliografici: CSL-JSON per le unità archivistiche,
+# BibTeX per la bibliografia a stampa.
+bibliography:
+  - fonti/fonti.json
+  - fonti/bibliografia.bib
+csl: assets/csl/dietroalmonte-archivistico.csl
+
+lang: it
+date-format: "D MMMM YYYY"
+
+execute:
+  freeze: auto
+  echo: false
+  warning: false

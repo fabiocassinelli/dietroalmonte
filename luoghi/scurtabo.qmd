@@ -1,0 +1,39 @@
+---
+title: "Scurtabò"
+subtitle: "Frazione di Varese Ligure, alta Val di Vara (SP)"
+description: "Nomi antichi, dipendenze, famiglie attestate e ricerche collegate."
+date-modified: last-modified
+---
+
+::: {.column-margin}
+**Coordinate** 44.3° N, 9.6° E · circa 800 m s.l.m.
+
+**Parrocchia** San Cassinelli, diocesi di Brugnato
+
+**Feudo** Fieschi, poi Repubblica di Genova
+:::
+
+## Nomi e attestazioni
+
+| Forma | Anno | Fonte |
+|---|---|---|
+| *Scurtaboe* | 1441 | ASGe, Notai Antichi |
+| *Scurtabovi* | 1583 | Visita pastorale |
+| Scurtabò | oggi | — |
+
+## Dipendenze
+
+Da compilare: signoria, pieve, podesteria, comune moderno.
+
+## Famiglie attestate
+
+Da compilare, con rimandi alle [schede di famiglia](../famiglie/index.qmd).
+
+## Ricerche su questo luogo
+
+```{=html}
+<!-- Sostituisci con un listing filtrato per categoria quando avrai
+     almeno due ricerche pubblicate su Scurtabò. -->
+```
+
+- [I Rossi di Scurtabò](../ricerche/2026-01-rossi-scurtabo/index.qmd)

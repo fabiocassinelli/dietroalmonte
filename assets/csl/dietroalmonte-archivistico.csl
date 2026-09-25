@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0"
+       default-locale="it-IT" demote-non-dropping-particle="never">
+  <info>
+    <title>Dietro al Monte — citazioni archivistiche</title>
+    <id>https://dietroalmonte.it/csl/dietroalmonte-archivistico</id>
+    <link href="https://dietroalmonte.it/metodo.html" rel="documentation"/>
+    <category citation-format="note"/>
+    <category field="history"/>
+    <summary>Stile con note a piè di pagina per la storia locale italiana.
+      Le unità archivistiche sono citate nella forma consueta in Italia:
+      sigla dell'istituto, fondo in corsivo, unità, documento.</summary>
+    <updated>2026-01-01T00:00:00+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</rights>
+  </info>
+
+  <!-- ══ macro comuni ══════════════════════════════════════════ -->
+
+  <macro name="autore-nota">
+    <names variable="author">
+      <name and="text" delimiter=", " initialize-with=". "/>
+      <substitute>
+        <names variable="editor"/>
+        <text macro="titolo-nota"/>
+      </substitute>
+    </names>
+  </macro>
+
+  <macro name="autore-bibliografia">
+    <names variable="author">
+      <name name-as-sort-order="all" and="text" sort-separator=", "
+            delimiter=", " delimiter-precedes-last="always"/>
+      <substitute>
+        <names variable="editor"/>
+        <text macro="titolo-nota"/>
+      </substitute>
+    </names>
+  </macro>
+
+  <macro name="titolo-nota">
+    <choose>
+      <if type="book thesis manuscript map" match="any">
+        <text variable="title" font-style="italic"/>
+      </if>
+      <else>
+        <text variable="title" quotes="true"/>
+      </else>
+    </choose>
+  </macro>
+
+  <macro name="anno">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+
+  <!-- ══ unità archivistiche ═══════════════════════════════════
+       Mappatura dei campi:
+         archive          sigla dell'istituto        ASGe
+         publisher        nome esteso dell'istituto  Archivio di Stato di Genova
+         title            fondo                      Notai Antichi
+         call-number      unità (filza, reg., busta) 1123
+         archive_location intitolazione dell'unità   Antonio da Cogorno
+         genre            tipologia                  Registro notarile
+         note             estremi, stato, lacune
+       Il documento singolo si indica nel suffisso della citazione:
+         [@ASGe_NA_1123, doc. 47 (1432 aprile 12)]
+       ══════════════════════════════════════════════════════════ -->
+
+  <macro name="archivio-nota">
+    <group delimiter=", ">
+      <text variable="archive"/>
+      <text variable="title" font-style="italic"/>
+      <text variable="call-number"/>
+      <text variable="archive_location"/>
+    </group>
+  </macro>
+
+  <macro name="archivio-nota-breve">
+    <group delimiter=", ">
+      <text variable="archive"/>
+      <text variable="title" font-style="italic"/>
+      <text variable="call-number"/>
+    </group>
+  </macro>
+
+  <macro name="archivio-bibliografia">
+    <group delimiter=", ">
+      <text variable="publisher"/>
+      <text variable="title" font-style="italic"/>
+      <text variable="call-number"/>
+      <text variable="archive_location"/>
+    </group>
+  </macro>
+
+  <!-- ══ materiale a stampa ════════════════════════════════════ -->
+
+  <macro name="pubblicazione">
+    <choose>
+      <if type="article-journal">
+        <group delimiter=", ">
+          <text variable="container-title" font-style="italic"/>
+          <group delimiter=" ">
+            <text term="volume" form="short"/>
+            <text variable="volume"/>
+          </group>
+          <text macro="anno"/>
+          <text variable="page" prefix="pp. "/>
+        </group>
+      </if>
+      <else-if type="chapter paper-conference" match="any">
+        <group delimiter=", ">
+          <text variable="container-title" font-style="italic" prefix="in "/>
+          <names variable="editor" prefix="a cura di ">
+            <name and="text" delimiter=", " initialize-with=". "/>
+          </names>
+          <text variable="publisher-place"/>
+          <text variable="publisher"/>
+          <text macro="anno"/>
+          <text variable="page" prefix="pp. "/>
+        </group>
+      </else-if>
+      <else>
+        <group delimiter=", ">
+          <text variable="publisher-place"/>
+          <text variable="publisher"/>
+          <text macro="anno"/>
+        </group>
+      </else>
+    </choose>
+  </macro>
+
+  <!-- ══ note ══════════════════════════════════════════════════ -->
+
+  <citation et-al-min="4" et-al-use-first="1" disambiguate-add-names="true">
+    <layout suffix="." delimiter="; ">
+      <choose>
+
+        <!-- ripetizione immediata -->
+        <if position="ibid">
+          <text term="ibid" text-case="capitalize-first"/>
+        </if>
+
+        <!-- unità archivistica -->
+        <else-if type="manuscript">
+          <choose>
+            <if position="subsequent">
+              <text macro="archivio-nota-breve"/>
+            </if>
+            <else>
+              <text macro="archivio-nota"/>
+            </else>
+          </choose>
+        </else-if>
+
+        <!-- rimando breve a un'opera già citata -->
+        <else-if position="subsequent">
+          <group delimiter=", ">
+            <names variable="author">
+              <name form="short" and="text" delimiter=", "/>
+            </names>
+            <text variable="title" form="short" font-style="italic"/>
+            <text value="cit." font-style="italic"/>
+          </group>
+        </else-if>
+
+        <!-- prima citazione di un'opera a stampa -->
+        <else>
+          <group delimiter=", ">
+            <text macro="autore-nota"/>
+            <text macro="titolo-nota"/>
+            <text macro="pubblicazione"/>
+          </group>
+        </else>
+
+      </choose>
+    </layout>
+  </citation>
+
+  <!-- ══ bibliografia e fonti ══════════════════════════════════ -->
+
+  <bibliography hanging-indent="true" entry-spacing="1" line-spacing="1"
+                subsequent-author-substitute="——">
+    <sort>
+      <key variable="archive"/>
+      <key macro="autore-bibliografia"/>
+      <key variable="title"/>
+    </sort>
+    <layout suffix=".">
+      <choose>
+
+        <if type="manuscript">
+          <group delimiter=". ">
+            <text macro="archivio-bibliografia"/>
+            <group delimiter=", ">
+              <text variable="genre"/>
+              <text macro="anno"/>
+            </group>
+            <text variable="note"/>
+          </group>
+        </if>
+
+        <else>
+          <group delimiter=", ">
+            <text macro="autore-bibliografia"/>
+            <text macro="titolo-nota"/>
+            <text macro="pubblicazione"/>
+          </group>
+        </else>
+
+      </choose>
+    </layout>
+  </bibliography>
+</style>

@@ -1,0 +1,241 @@
+---
+title: "I Rossi di Scurtabò"
+subtitle: "Una famiglia di pastori fra Val di Vara e Val Taro, 1432–1650"
+description: >
+  Quattro rogiti del fondo Notai Antichi permettono di ricostruire cinque
+  generazioni dei de Rubeis e di seguire i loro spostamenti stagionali
+  attraverso il crinale appenninico.
+date: 2026-01-20
+categories: [Scurtabò, Varese Ligure, Santa Maria del Taro, transumanza, notarile, XV secolo]
+doi: 10.5281/zenodo.0000000
+citation:
+  type: webpage
+  container-title: "Dietro al Monte"
+  url: https://dietroalmonte.it/ricerche/2026-01-rossi-scurtabo/
+abstract: >
+  Dei Rossi di Scurtabò si conosceva finora solo l'attestazione
+  settecentesca nei registri parrocchiali. Quattro rogiti rintracciati
+  nelle filze 1123 e 1147 del fondo Notai Antichi dell'Archivio di Stato
+  di Genova ne anticipano la presenza al 1432 e mostrano che la famiglia
+  possedeva pascoli su entrambi i versanti del crinale, in Val di Vara e
+  in alta Val Taro. Ne emerge un modello di economia pastorale
+  transappenninica che il confine amministrativo fra Liguria ed Emilia
+  ha reso invisibile alla storiografia locale di entrambi i versanti.
+format:
+  html:
+    include-in-header: ../../assets/leaflet.html
+---
+
+<!--
+  ─────────────────────────────────────────────────────────────────
+  Questo file è insieme un esempio e un modello di scrittura.
+  I commenti come questo spiegano le scelte e vanno cancellati.
+
+  Struttura consigliata:
+   1. aggancio narrativo concreto (2-3 paragrafi, nessuna nota pesante)
+   2. il problema: cosa si sapeva, cosa non tornava
+   3. i documenti, uno per uno
+   4. la ricostruzione
+   5. conclusione e piste aperte
+   6. appendice documentaria (regesti e trascrizioni, richiudibili)
+  ─────────────────────────────────────────────────────────────────
+-->
+
+Il 12 aprile 1432 tre fratelli salgono da Scurtabò a Varese per dividere
+i beni del padre. Il notaio Antonio da Cogorno li registra come
+*Iohannes, Antonius et Bartholomeus quondam Nicolai de Rubeis de
+Scurtaboe*. Nell'elenco dei beni, dopo la casa e i castagneti, compare
+una voce che non dovrebbe esserci: un pascolo *in monte Pennae, in
+territorio Sanctae Mariae de Tarro*.[@ASGe_NA_1123, doc. 47 (1432 aprile 12)]
+
+Santa Maria del Taro è oltre il crinale, in territorio parmense, a un
+giorno di cammino. Che una famiglia di Scurtabò vi possedesse terre nel
+1432 è il punto di partenza di questa ricerca.
+
+## Che cosa si sapeva
+
+La storiografia locale della Val di Vara colloca la prima attestazione
+dei Rossi di Scurtabò nel 1698, con il battesimo di Gio Batta fu
+Domenico.[@APS_Battesimi_1, c. 34r] Sul versante emiliano, i repertori
+dei cognomi dell'alta Val Taro registrano dei *Rossi* a Santa Maria
+almeno dal Cinquecento, ma li considerano autoctoni.
+
+::: {.column-margin}
+Il confine fra Repubblica di Genova e feudi Landi corre sul crinale dal
+1257. Le due tradizioni erudite si sono formate dentro quel confine e non
+si sono quasi mai lette a vicenda: è la ragione principale per cui questa
+connessione non era stata notata.
+:::
+
+Nessuna delle due tradizioni ha mai messo in relazione i due gruppi. La
+ragione è banale e vale per moltissima storia di montagna: gli archivi
+sono divisi secondo un confine politico che le famiglie attraversavano
+ogni anno con le greggi.
+
+## I documenti
+
+### La divisione del 1432
+
+Il rogito di divisione è il documento fondativo di questa ricerca. Elenca
+per ciascuno dei tre fratelli case, castagneti, prati e — solo per
+Giovanni, il maggiore — il pascolo transappenninico.[^pascolo]
+
+[^pascolo]: L'assegnazione del pascolo al solo primogenito, a fronte di
+una divisione per il resto rigorosamente egualitaria, suggerisce che il
+bene fosse considerato indivisibile e legato all'esercizio collettivo
+dell'alpeggio. Sulla stessa filza compaiono altre due divisioni di
+famiglie di Scurtabò con la medesima struttura [@ASGe_NA_1123, docc. 51 e 63].
+
+::: {.callout-note collapse="true" appearance="simple" class="trascrizione"}
+## Regesto e trascrizione — ASGe, NA 1123, doc. 47
+
+**1432 aprile 12, Varese.**
+
+*Regesto.* Giovanni, Antonio e Bartolomeo fu Nicolò de Rubeis di
+Scurtabò dividono fra loro i beni paterni: a Giovanni la casa
+con l'aia e il pascolo sul monte Penna in territorio di Santa Maria del
+Taro; ad Antonio i castagneti di Costa Lunga; a Bartolomeo i prati di
+Chiazzanico e un censo annuo di quattro lire. Testimoni: il prete
+Simone, rettore di San Cassinelli, e Giacomo fu Andrea de Cuneo.
+
+*Trascrizione.*
+
+> In nomine Domini amen. Anno dominice nativitatis millesimo
+> quadringentesimo trigesimo secundo, die duodecima aprilis. |
+> Iohannes, Antonius et Bartholomeus fratres, filii et heredes
+> quondam Nicolai de Rubeis de Scurtaboe [...] ad divisionem
+> bonorum paternorum devenerunt in hunc modum [...] |
+> item pascuum unum in monte Pennae, in territorio Sanctae
+> Mariae de Tarro, coheret ab uno latere [...]
+
+*Note alla trascrizione.* La carta è mutila nel margine esterno: cadono
+circa quattro parole per riga fra le cc. 88v e 89r, che rendono
+illeggibili i confinanti del pascolo.
+:::
+
+### La locazione di bestiame del 1444
+
+Dodici anni dopo, Giovanni compare come locatore di un gregge di
+sessanta pecore a un pastore di Tornolo, con contratto di
+soccida.[@ASGe_NA_1147, doc. 12 (1444 settembre 3)] Il contratto
+conferma l'asse transappenninico e aggiunge un dato economico: la
+famiglia non conduce personalmente il gregge, lo affida.
+
+## La ricostruzione
+
+```{dot}
+//| label: fig-albero
+//| fig-cap: "I de Rubeis di Scurtabò secondo i rogiti del 1432 e del 1444. In grassetto gli individui direttamente attestati; in grigio le generazioni ricostruite per via indiziaria."
+digraph rossi {
+  rankdir=TB;
+  bgcolor="transparent";
+  node [shape=box, style="rounded", fontname="Spectral", fontsize=11,
+        color="#39434E", fontcolor="#23272C", margin="0.14,0.07"];
+  edge [color="#6E7883", arrowsize=0.6];
+
+  nicolo    [label=<<b>Nicolò</b><br/>† ante 1432>];
+  giovanni  [label=<<b>Giovanni</b><br/>att. 1432–1444>];
+  antonio   [label=<<b>Antonio</b><br/>att. 1432>];
+  bartolomeo[label=<<b>Bartolomeo</b><br/>att. 1432>];
+  ignoto    [label="ramo di S. Maria del Taro\n(ricostruito)",
+             color="#6E7883", fontcolor="#6E7883", style="rounded,dashed"];
+
+  m [shape=point, width=0.04, color="#6E7883"];
+  nicolo -> m [arrowhead=none];
+  m -> giovanni; m -> antonio; m -> bartolomeo;
+  giovanni -> ignoto [style=dashed];
+}
+```
+
+## I luoghi
+
+```{=html}
+<div id="mappa-rossi" class="mappa"></div>
+<script>
+(function () {
+  const map = L.map('mappa-rossi', { scrollWheelZoom: false })
+                .setView([44.42, 9.60], 11);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; contributori OpenStreetMap',
+    maxZoom: 17
+  }).addTo(map);
+
+  fetch('dati/luoghi.geojson')
+    .then(r => r.json())
+    .then(gj => {
+      const layer = L.geoJSON(gj, {
+        pointToLayer: (f, latlng) => L.circleMarker(latlng, {
+          radius: 7, color: '#2E6157', weight: 2,
+          fillColor: '#2E6157', fillOpacity: 0.55
+        }),
+        onEachFeature: (f, l) =>
+          l.bindPopup('<strong>' + f.properties.nome + '</strong><br>' +
+                      (f.properties.nota || ''))
+      }).addTo(map);
+      map.fitBounds(layer.getBounds(), { padding: [30, 30] });
+    })
+    .catch(() => {
+      document.getElementById('mappa-rossi').innerHTML =
+        '<p style="padding:1rem">Mappa non disponibile.</p>';
+    });
+})();
+</script>
+```
+
+I beni divisi nel 1432 si distribuiscono su due versanti: il nucleo
+domestico e i castagneti attorno a Scurtabò, il pascolo sul Penna a
+circa venticinque chilometri di cammino, oltre il crinale.
+
+## Un modello, non un caso isolato
+
+Contando gli atti che coinvolgono famiglie di Scurtabò nelle filze
+1100–1180, la presenza di beni oltre crinale non è un'eccezione:
+
+```{ojs}
+//| label: fig-atti
+atti = [
+  {decennio: "1420", atti: 3,  transappenninici: 0},
+  {decennio: "1430", atti: 11, transappenninici: 4},
+  {decennio: "1440", atti: 14, transappenninici: 6},
+  {decennio: "1450", atti: 9,  transappenninici: 3},
+  {decennio: "1460", atti: 5,  transappenninici: 2}
+]
+
+Plot.plot({
+  marginLeft: 50,
+  height: 260,
+  style: { fontFamily: "Spectral, serif", fontSize: "12px",
+           background: "transparent", color: "#23272C" },
+  x: { label: "decennio", tickSize: 0 },
+  y: { label: "atti notarili", grid: true },
+  marks: [
+    Plot.barY(atti, {x: "decennio", y: "atti", fill: "#CFCFC6"}),
+    Plot.barY(atti, {x: "decennio", y: "transappenninici", fill: "#2E6157"}),
+    Plot.ruleY([0], {stroke: "#39434E"})
+  ]
+})
+```
+
+In verde gli atti che menzionano beni o controparti oltre il crinale: un
+terzo del totale nel trentennio centrale. La scomparsa del fenomeno dopo
+il 1460 è quasi certamente un effetto della documentazione, non della
+realtà: dal 1461 i notai di Varese rogano su filze oggi conservate altrove.
+
+## Piste aperte
+
+- Le filze notarili di Borgotaro (ASPr) per lo stesso trentennio non sono
+  state ancora controllate: dovrebbero contenere il riflesso emiliano di
+  questi stessi contratti.
+- I confinanti del pascolo, illeggibili nel doc. 47, potrebbero
+  ricomparire in atti successivi sulla stessa filza.
+- Manca del tutto la documentazione fra il 1465 e il 1595. Il legame fra
+  i de Rubeis quattrocenteschi e i Rossi settecenteschi resta, per ora,
+  un'ipotesi fondata sulla continuità del Cassinelli e dei beni, non una
+  filiazione dimostrata.
+
+## Fonti archivistiche e bibliografia
+
+::: {#refs}
+:::
+
+{{< include _revisioni.md >}}
