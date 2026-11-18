@@ -1,154 +1,142 @@
 ---
 title: "Il delitto di Chilinella"
-subtitle: "Cassego, 1577: l'uccisione di Angeletto Servente per mano del bandito Battista «Bacchione» Longinotti"
+subtitle: "Cassego, 1577: l'uccisione di Angeletto Servente per mano del bandito Battista Longinotti detto «Bacchione»"
 description: >
   Nel 1577, a Chilinella, località di Cassego, un giovane di Scioverana
   viene ucciso da un bandito della Repubblica di Genova. Ricostruzione
   del fatto a partire dai documenti d'archivio.
 date: 2026-09-25
 categories: [Cassego, Chilinella, Scurtabò, Scioverana, banditismo, XVI secolo]
+# BOZZA: finché c'è questa riga la ricerca si vede solo nell'anteprima
+# sul tuo computer. Cancellala quando non resta nessun DA COMPLETARE.
+draft: true
+# VERSIONE CITABILE: togli il cancelletto quando la ricerca è matura.
+# GitHub creerà da solo PDF, Release e deposito su Zenodo.
+# versione: "1.0"
 doi: ""
 citation:
   type: webpage
   container-title: "Dietro al Monte"
   url: https://dietroalmonte.it/ricerche/2026-09-delitto-chilinella-1577/
 abstract: >
-  Nel 1577, a Chilinella, una località del comune di Cassego, Angeletto
+  Nel 1577, a Chilinella, località di Cassego (Varese Ligure), Angeletto
   Servente, giovane di Scioverana (frazione di Scurtabò), viene ucciso
-  da Battista Longinotti, detto "Bacchione", uomo già colpito da bando
-  della Repubblica di Genova. Il caso permette di osservare da vicino
-  il fenomeno del banditismo nell'entroterra genovese del Cinquecento e
-  i legami, spesso invisibili nella storiografia locale, fra comunità
-  di valli vicine ma amministrativamente distinte.
+  da Battista Longinotti detto «Bacchione», bandito della Repubblica di
+  Genova. DA COMPLETARE: due o tre frasi su quali documenti hai trovato
+  e che cosa permettono di stabilire.
 ---
 
-<!--
-  ═══════════════════════════════════════════════════════════════
-  QUESTO È UNO SCHELETRO, NON UNA RICERCA FINITA.
+Nel 1577, a Chilinella — località di Cassego, nel territorio di Varese
+Ligure — viene ucciso Angeletto Servente, un giovane di Scioverana,
+frazione di Scurtabò. A ucciderlo è Battista Longinotti, detto
+«Bacchione», bandito della Repubblica di Genova.
 
-  Ho scritto qui dentro solo i fatti che mi hai dato tu: luogo, anno,
-  vittima, autore. Tutto il resto — la data esatta, la fonte
-  documentaria, le circostanze, l'esito giudiziario — è segnato con
-  un blocco evidenziato "DA COMPLETARE" ovunque serva il tuo
-  materiale d'archivio. Non ho inventato nessuna citazione, nessun
-  numero di filza, nessuna data oltre l'anno: sarebbe stato
-  esattamente il contrario di quello che questo sito vuole fare.
-
-  Prima di pubblicare, cerca ogni "DA COMPLETARE" e sostituiscilo.
-  Poi cancella questo commento.
-  ═══════════════════════════════════════════════════════════════
--->
-
-Nel 1577, a Chilinella — una località del territorio di Cassego, non
-lontana da Scurtabò — Angeletto Servente viene ucciso. Angeletto è un
-giovane di Scioverana, frazione di Scurtabò. A ucciderlo è Battista
-Longinotti, detto "Bacchione", uomo che la Repubblica di Genova aveva
-già dichiarato bandito.
-
-::: {.callout-important collapse="false"}
+::: {.da-completare}
 ## DA COMPLETARE — il documento che attesta il fatto
 
-Qui va la fonte che racconta questo episodio: una denuncia, un
-processo criminale, un bando, una supplica dei familiari. Finché non
-la aggiungi, questa pagina resta un racconto senza prova — l'esatto
-contrario di quello per cui questo sito esiste.
+Qui serve la fonte: una denuncia, un processo criminale, un bando, una
+supplica dei familiari. Finché manca, questa pagina è un racconto senza
+prova.
 
-**Come procedere:**
-
-1. Apri `fonti/fonti.json` e aggiungi un elemento per l'unità
-   archivistica che contiene il documento (segui il formato spiegato
-   in `assets/csl/LEGGIMI.md` — un elemento per filza/registro/busta,
-   non per singolo documento).
-2. Torna qui e sostituisci questo paragrafo con una frase che citi il
-   documento in nota, come negli altri articoli del sito:
+1. Aggiungi in Zotero l'unità archivistica che contiene il documento
+   (una voce per filza, registro o busta — non per singolo documento):
+   comparirà da sola in `fonti/fonti.json`.
+2. Sostituisci questo riquadro con una frase che cita il documento in
+   nota. Esempio esatto (sigla, numeri e data sono inventati):
 
    ```markdown
-   Il fatto è registrato in un atto del [mese] 1577.[@SIGLA_FONDO_UNITA,
-   doc. NN (1577 mese giorno)]
+   Il fatto è registrato in un atto del marzo 1577.[@ASGe_FONDO_0000, doc. 12 (1577 marzo 3)]
    ```
-3. Se hai più di un documento (per esempio la denuncia e poi un
-   eventuale processo), ripeti questo blocco una volta per documento,
-   con il suo regesto — vedi il modello sotto.
 :::
 
 ## Che cosa si sapeva
 
-<!-- DA COMPLETARE: questo caso compare in qualche repertorio, studio
-     locale o tradizione orale di Cassego/Scurtabò? Se non ne sai
-     nulla, di' semplicemente che non risulta documentato altrove —
-     è un'informazione legittima quanto le altre. -->
+::: {.da-completare}
+## DA COMPLETARE — lo stato delle conoscenze
 
-Per quanto ne so finora, questo episodio non compare nella
-storiografia locale pubblicata né su un versante né sull'altro. Se
-è davvero la prima volta che viene ricostruito da fonti d'archivio,
-vale la pena dirlo esplicitamente qui.
+Di' se l'episodio compare già in studi, repertori o nella tradizione
+orale di Cassego e Scurtabò. Se non risulta da nessuna parte, dillo
+apertamente: è un'informazione come le altre. Esempio esatto:
+
+```markdown
+Per quanto ho potuto verificare, l'episodio non compare negli studi
+di storia locale pubblicati finora.[^studi]
+
+[^studi]: Ho controllato: TITOLO 1, TITOLO 2.
+```
+:::
 
 ## I documenti
 
-### [Titolo del documento — es. "La denuncia dell'omicidio"]
+::: {.da-completare}
+## DA COMPLETARE — un paragrafo e un regesto per ogni documento
+
+Per ciascun documento: un titolo, un paragrafo che lo racconta con la
+citazione in nota, e il regesto richiudibile. Esempio esatto (tutti i
+dati sono inventati):
+
+````markdown
+### La denuncia dell'omicidio
+
+Il 3 marzo 1577 il padre della vittima si presenta al podestà.[@ASGe_FONDO_0000, doc. 12 (1577 marzo 3)]
 
 ::: {.callout-note collapse="true" appearance="simple" class="trascrizione"}
-## Regesto e trascrizione — SIGLA, fondo, unità, doc.
+## Regesto e trascrizione — ASGe, Fondo, 0000, doc. 12
 
-**1577 [mese] [giorno], [luogo dell'atto].**
+**1577 marzo 3, Varese.**
 
-*Regesto.* [Riassunto in una frase: chi accusa, chi è accusato, cosa
-è successo, con i nomi in forma moderna.]
+*Regesto.* Chi accusa, chi è accusato, che cosa è successo, con i nomi
+in forma moderna.
 
 *Trascrizione.*
 
-> [testo del documento, se lo trascrivi]
+> Testo del documento...
 
-*Note alla trascrizione.* [stato della carta, lacune, letture incerte]
+*Note alla trascrizione.* Stato della carta, lacune, letture incerte.
+:::
+````
 :::
 
 ## Il contesto: essere banditi nella Repubblica di Genova
 
-<!-- Paragrafo di inquadramento generale, scritto in autonomia — non
-     riguarda questo caso specifico, quindi non ha bisogno di una
-     citazione archivistica. Se conosci uno studio sul banditismo
-     nell'entroterra genovese che vuoi citare qui, aggiungilo a
-     fonti/bibliografia.bib e richiamalo con @chiave. -->
+::: {.da-completare}
+## DA COMPLETARE — inquadramento, da scrivere sulla bibliografia
 
-Nella Repubblica di Genova del Cinquecento, essere "bandito" non era
-una condizione marginale quanto potrebbe sembrare oggi: il bando era
-una sentenza di condanna pronunciata anche in assenza dell'imputato,
-che lo escludeva dalla protezione della giustizia ordinaria. Un
-bandito poteva essere ucciso spesso senza conseguenze penali per chi
-lo faceva, e in certi casi la sua cattura o la sua morte comportavano
-perfino una taglia. Questo non significa che un bandito smettesse di
-agire: anzi, l'esclusione dalla giustizia spingeva spesso questi
-uomini a vivere di rapina, violenza o al servizio di chi li proteggeva
-in cambio di favori. Il caso di Battista Longinotti va letto dentro
-questa cornice — ma sono le carte, non questa premessa generale, a
-dover dire cosa è successo davvero a Chilinella.
+Qui va un paragrafo che spieghi al lettore non specialista che cosa
+significava essere «bandito» nella Repubblica di Genova del Cinquecento
+(la condanna in contumacia, le conseguenze, le taglie). Non l'ho scritto
+io: sono affermazioni generali che vanno appoggiate a uno studio
+pubblicato. Aggiungi lo studio in Zotero e citalo. Esempio esatto
+(autore e pagine inventati):
+
+```markdown
+Il bando era una condanna pronunciata in assenza dell'imputato.[@rossi2001, pp. 45-52]
+```
+:::
 
 ## La ricostruzione
 
-<!-- DA COMPLETARE, quando avrai più materiale:
-     - una mappa Chilinella / Cassego / Scioverana / Scurtabò, se
-       riesci a individuare le coordinate di Chilinella (è il tuo
-       terreno professionale: puoi farla meglio di chiunque altro)
-     - eventuali legami di parentela o di vicinato fra Servente e
-       Longinotti, se emergono da altri atti
-     - l'esito: Longinotti fu mai catturato? Ci fu un processo,
-       una condanna, un risarcimento ai familiari? -->
+::: {.da-completare}
+## DA COMPLETARE — quando avrai più materiale
 
-Al momento non ho abbastanza documenti per andare oltre il fatto in
-sé. Quando emergeranno altri atti — un processo, una supplica, una
-menzione successiva di Longinotti — questa sezione è dove li metterò
-in relazione fra loro.
+- Una mappa con Chilinella, Cassego, Scioverana e Scurtabò (modello in
+  `_modelli/esempio-rossi/index.qmd`).
+- Eventuali legami di parentela o di vicinato fra i Servente e i
+  Longinotti, se emergono da altri atti.
+- L'esito: Longinotti fu catturato? Ci fu un processo, una condanna, un
+  risarcimento ai familiari?
+:::
 
 ## Piste aperte
 
 - La data esatta dell'omicidio, oltre all'anno 1577.
-- Se Battista Longinotti fu mai catturato o processato per questo o
+- Se Battista Longinotti fu mai catturato o processato per questo o per
   altri fatti.
-- Se risulta una taglia posta sulla sua testa, e da chi.
-- Se i familiari di Angeletto Servente cercarono un risarcimento o
-  una qualche forma di giustizia.
-- Se altri atti della stessa filza notarile o dello stesso fondo
-  criminale menzionano il caso.
+- Se risulta una taglia posta su di lui, e da chi.
+- Se i familiari di Angeletto Servente cercarono un risarcimento o una
+  qualche forma di giustizia.
+
+<!-- CODA — da qui in giù la conversione da Word non tocca nulla -->
 
 ## Fonti archivistiche e bibliografia
 

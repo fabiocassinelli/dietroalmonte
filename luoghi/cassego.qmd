@@ -10,25 +10,35 @@ date-modified: last-modified
 
 **Zona** Alta Val di Vara
 
-**Frazioni vicine** Scurtabò, Scioverana
+**Località** Chilinella
 :::
 
-Cassego è, come Scurtabò, una delle frazioni del comune di Varese
-Ligure, nell'alta Val di Vara. Comprende la località di **Chilinella**,
-teatro dell'omicidio di Angeletto Servente nel 1577.
+Cassego è, come Scurtabò, una frazione del comune di Varese Ligure,
+nell'alta Val di Vara. Ne fa parte la località di **Chilinella**, dove
+nel 1577 fu ucciso Angeletto Servente.
 
-<!-- DA COMPLETARE: dipendenze feudali ed ecclesiastiche di Cassego,
-     se diverse da quelle di Scurtabò; coordinate di Chilinella, se
-     riesci a individuarle, per costruire una mappa nella ricerca
-     collegata. -->
+::: {.da-completare}
+## DA COMPLETARE — nomi, dipendenze, posizione di Chilinella
 
+Aggiungi qui sotto, quando hai il documento che lo prova. Esempio esatto
+di che cosa scrivere (i dati sono inventati: sostituiscili):
+
+```markdown
 ## Nomi e attestazioni
 
-Da compilare.
+| Forma | Anno | Fonte |
+|---|---|---|
+| *Forma antica del nome* | 1500 | [@ASGe_NA_0000, doc. 12 (1500 marzo 3)] |
 
 ## Dipendenze
 
-Da compilare: signoria, pieve, podesteria, comune moderno.
+Signoria, pieve o parrocchia, podesteria: una frase per ciascuna,
+con la nota che la documenta.[@ASGe_NA_0000, c. 12r]
+```
+
+Se individui le coordinate di Chilinella, mettile nella colonna a
+margine qui sopra: serviranno per la mappa della ricerca collegata.
+:::
 
 ## Ricerche su questo luogo
 

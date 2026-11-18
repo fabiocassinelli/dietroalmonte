@@ -3,19 +3,20 @@ project:
   output-dir: _site
   render:
     - "**/*.qmd"
-    - "!scripts/"        # scripts/template.qmd è un modello, non una pagina
-  pre-render:
-    - scripts/revisioni.py
+    - "!_modelli/"       # modelli ed esempi: non vengono mai pubblicati
   resources:
     - CNAME
     - CITATION.cff
-    - "**/*.ots"
+    - assets/fonts/
 
 website:
   title: "Dietro al Monte"
   description: "Ricerche d'archivio su paesi e famiglie tra Vara, Aveto e Taro"
   site-url: https://dietroalmonte.it
-  favicon: assets/favicon.png
+  favicon: assets/favicon.svg
+  # Le pagine con "draft: true" nella scheda non vengono pubblicate:
+  # si vedono solo nell'anteprima sul tuo computer.
+  draft-mode: gone
   search:
     location: navbar
     type: overlay
@@ -53,7 +54,10 @@ format:
     theme:
       - cosmo
       - assets/theme.scss
-    include-in-header: assets/fonts.html
+    css: assets/fonts.css
+    # Niente formule matematiche: così nessuna pagina carica MathJax da fuori.
+    html-math-method: plain
+    include-in-header: assets/head.html
     toc: true
     toc-title: "In questa pagina"
     toc-depth: 3
@@ -74,8 +78,8 @@ format:
       margin-width: 300px
       gutter-width: 1.6rem
 
-# Più file bibliografici: CSL-JSON per le unità archivistiche,
-# BibTeX per la bibliografia a stampa.
+# Due file di fonti: CSL-JSON per le unità archivistiche,
+# BibTeX per la bibliografia a stampa. Entrambi esportati da Zotero.
 bibliography:
   - fonti/fonti.json
   - fonti/bibliografia.bib
@@ -83,6 +87,11 @@ csl: assets/csl/dietroalmonte-archivistico.csl
 
 lang: it
 date-format: "D MMMM YYYY"
+
+# I riquadri "DA COMPLETARE" si vedono solo in anteprima: vedi il file.
+filters:
+  - at: pre-ast
+    path: scripts/da-completare.lua
 
 execute:
   freeze: auto

@@ -6,37 +6,40 @@ date-modified: last-modified
 ---
 
 ::: {.column-margin}
-**Coordinate** 44.3° N, 9.6° E · circa 800 m s.l.m.
+**Comune** Varese Ligure (SP)
 
-**Parrocchia** San Cassinelli, diocesi di Brugnato
-
-**Feudo** Fieschi, poi Repubblica di Genova
+**Zona** Alta Val di Vara
 
 **Località** Scioverana
 :::
 
+Scurtabò è una frazione del comune di Varese Ligure, nell'alta Val di
+Vara. Ne fa parte la località di **Scioverana**.
+
+::: {.da-completare}
+## DA COMPLETARE — nomi, dipendenze, famiglie
+
+Aggiungi qui sotto, quando hai il documento che lo prova, tre sezioni.
+Esempio esatto di che cosa scrivere (i dati sono inventati: sostituiscili):
+
+```markdown
 ## Nomi e attestazioni
 
 | Forma | Anno | Fonte |
 |---|---|---|
-| *Scurtaboe* | 1441 | ASGe, Notai Antichi |
-| *Scurtabovi* | 1583 | Visita pastorale |
-| Scurtabò | oggi | — |
+| *Forma antica del nome* | 1500 | [@ASGe_NA_0000, doc. 12 (1500 marzo 3)] |
 
 ## Dipendenze
 
-Da compilare: signoria, pieve, podesteria, comune moderno.
+Signoria, pieve o parrocchia, podesteria: una frase per ciascuna,
+con la nota che la documenta.[@ASGe_NA_0000, c. 12r]
 
 ## Famiglie attestate
 
-Da compilare, con rimandi alle [schede di famiglia](../famiglie/index.qmd).
+- [Servente](../famiglie/servente.qmd)
+```
+:::
 
 ## Ricerche su questo luogo
 
-```{=html}
-<!-- Sostituisci con un listing filtrato per categoria quando avrai
-     più ricerche pubblicate su Scurtabò. -->
-```
-
-- [I Rossi di Scurtabò](../ricerche/2026-01-rossi-scurtabo/index.qmd)
 - [Il delitto di Chilinella](../ricerche/2026-09-delitto-chilinella-1577/index.qmd) — la vittima, Angeletto Servente, era di Scioverana

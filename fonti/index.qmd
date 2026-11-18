@@ -14,77 +14,95 @@ muovere in sala di studio partendo solo da qui.
 
 | Sigla | Istituto |
 |---|---|
-| ACS | Archivio Centrale dello Stato, Roma |
-| APS | Archivio Parrocchiale di Scurtabò |
 | ASGe | Archivio di Stato di Genova |
+| ASSp | Archivio di Stato della Spezia |
 | ASPr | Archivio di Stato di Parma |
-| ASSp | Archivio di Stato di La Spezia |
-| ASDGe | Archivio Storico Diocesano di Genova |
-| ASDBr | Archivio Storico Diocesano di Brugnato |
 
-| Sigla | Serie ricorrente |
-|---|---|
+::: {.da-completare}
+## DA COMPLETARE — le sigle che usi davvero
+
+La tabella qui sopra contiene solo tre istituti d'esempio. Togli quelli
+che non citi e aggiungi una riga per ogni archivio e per ogni serie
+ricorrente che compare nelle tue note. Esempio esatto:
+
+```markdown
+| APx | Archivio parrocchiale di NOME PAESE |
 | NA | Notai Antichi (ASGe) |
-| NI | Notai Ignoti (ASGe) |
-| SR | Stati d'anime (archivi parrocchiali) |
-| VP | Visite pastorali |
+```
+:::
 
 ## Come leggere una nota
 
-> ASGe, *Notai Antichi*, 1123, notaio Antonio da Cogorno, doc. 47
-> (1432 aprile 12).
+> ASGe, *Notai Antichi*, 1123, notaio X, doc. 47 (1432 aprile 12).
 
 Nell'ordine: sigla dell'istituto, fondo in corsivo, unità archivistica
-(filza, registro o busta), eventuale intitolazione, documento, data
-topica e cronica fra parentesi. Quando cito una carta e non un documento
-numerato uso la forma `c. 12r` / `cc. 12r–13v`.
+(filza, registro o busta), eventuale intitolazione dell'unità, documento,
+data fra parentesi. Quando cito una carta e non un documento numerato
+uso la forma «c. 12r» oppure «cc. 12r–13v».
 
 Alla seconda citazione della stessa unità la nota si accorcia
-(`ASGe, *Notai Antichi*, 1123, doc. 51`), alla ripetizione immediata
-diventa `Ibid.`
+(«ASGe, *Notai Antichi*, 1123, doc. 51»); alla ripetizione immediata
+diventa «Ibid.»
+
+L'esempio qui sopra mostra solo la forma della nota: non rimanda a un
+documento reale.
 
 ## Schede dei fondi
 
+Le schede dei fondi consultati sono in preparazione.
+
+::: {.da-completare}
+## DA COMPLETARE — una scheda per ogni fondo consultato
+
+Sostituisci la frase «in preparazione» con una scheda per fondo.
+Esempio esatto di che cosa scrivere (i dati sono inventati):
+
+```markdown
 ### ASGe, Notai Antichi
 
-**Consistenza consultata** filze 1100–1180.
-**Estremi cronologici** 1420–1465.
-**Stato di conservazione** buono; alcune filze con danni da umidità sui
-margini esterni.
-**Strumenti di corredo** inventario a stampa in sala di studio; indice
-dei notai per anno.
-**Che cosa ci ho trovato** rogiti di divisione, dotali e locazioni di
-bestiame relativi all'alta Val di Vara.
-**Riproduzioni** fotografie eseguite con mezzi propri, autodichiarazione
-depositata in sala di studio.
-
-### APS, Registri parrocchiali di Scurtabò
-
-**Consistenza consultata** battesimi 1595–1810, matrimoni 1596–1810,
-morti 1620–1810.
-**Lacune** battesimi 1630–1638; morti 1704–1711.
-**Stato di conservazione** discreto.
-**Accesso** su appuntamento con il parroco.
+**Consistenza consultata** filze 0000–0000.
+**Estremi cronologici** 1500–1550.
+**Stato di conservazione** buono; danni da umidità sui margini.
+**Strumenti di corredo** inventario in sala di studio.
+**Che cosa ci ho trovato** una riga sul tipo di atti utili.
+**Riproduzioni** fotografie eseguite con mezzo proprio.
+```
+:::
 
 ## Uso delle riproduzioni
 
-Le immagini di documenti eventualmente pubblicate qui sono state
-acquisite legittimamente in sala di studio con mezzi propri e sono
-divulgate senza scopo di lucro, per finalità di studio e ricerca,
-su un sito ad accesso gratuito e privo di inserzioni pubblicitarie
-(art. 108, commi 3 e 3-bis, d.lgs. 42/2004, come modificato dalla
-l. 124/2017; D.M. 21 marzo 2024, n. 108). Agli istituti conservatori
-è stata data comunicazione scritta dell'intenzione di pubblicare, e a
-ciascuno è consegnata copia degli elaborati.
+Le immagini di documenti pubblicate su questo sito sono fotografie che
+ho eseguito io in sala di studio, con mezzo proprio. Le divulgo senza
+scopo di lucro, per finalità di studio e di ricerca, su un sito ad
+accesso gratuito e privo di pubblicità, come consente l'art. 108,
+commi 3 e 3-bis, del Codice dei beni culturali (d.lgs. 42/2004) e come
+precisano le linee guida ministeriali (D.M. 11 aprile 2023, n. 161,
+modificato dal D.M. 21 marzo 2024, n. 108). Di ogni immagine è indicata
+la segnatura del documento.
 
-::: {.callout-note collapse="true" appearance="simple"}
-## Comunicazioni inviate agli istituti
+I documenti conservati in archivi non statali — parrocchiali, diocesani,
+privati — appartengono a chi li conserva: ne pubblico l'immagine solo
+con il suo consenso.
 
-| Istituto | Data comunicazione | Riscontro |
-|---|---|---|
-| ASGe | — | — |
-| ASSp | — | — |
-| ASPr | — | — |
+Le immagini restano riproduzioni di beni culturali: la licenza del sito
+vale per i miei testi e le mie elaborazioni, non autorizza a riusarle a
+scopo di lucro.
 
-Tieni aggiornata questa tabella: è la prova che hai adempiuto.
+::: {.da-completare}
+## DA COMPLETARE — conferma questo paragrafo
+
+Il testo qui sopra descrive la regola generale, verificata a novembre
+2026. Prima di pubblicare la prima immagine:
+
+1. controlla che descriva davvero come lavori (soprattutto la frase sugli
+   archivi non statali) e correggilo se serve;
+2. guarda il regolamento della sala di studio di ogni istituto: alcuni
+   chiedono un modulo o una copia della pubblicazione;
+3. tieni qui sotto un registro di consensi e comunicazioni. Esempio:
+
+```markdown
+| Istituto | Che cosa ho chiesto o comunicato | Data | Riscontro |
+|---|---|---|---|
+| Parrocchia di NOME | consenso a pubblicare c. 12r del registro X | 2026-12-01 | sì, per email |
+```
 :::

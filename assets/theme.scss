@@ -19,6 +19,10 @@ $rubrica:       #7A5615;  // accento unico: link, richiami di nota
 $rubrica-viva:  #A8791C;  // stato hover
 $verderame:     #2E6157;  // solo per dati: mappe, grafici, alberi
 
+// Il tema di base (cosmo) caricherebbe un carattere da Google Fonts:
+// lo spengo. I caratteri del sito sono ospitati in assets/fonts/.
+$web-font-path: false;
+
 $body-bg:    $carta;
 $body-color: $inchiostro;
 $link-color: $rubrica;
@@ -51,6 +55,8 @@ $footer-bg: $ardesia;
 $footer-fg: #C3C9D0;
 
 $border-color: #CFCFC6;
+$callout-color-note: $ardesia;
+$callout-color-important: $rubrica-viva;
 $table-border-color: $border-color;
 $code-bg: $carta-alta;
 $code-color: $ardesia;
@@ -165,6 +171,17 @@ figcaption {
   font-style: normal;
   color: $inchiostro;
 }
+
+// Riquadri "DA COMPLETARE": promemoria per l'autore, visibili solo
+// nell'anteprima. Sul sito pubblico vengono tolti (scripts/da-completare.lua).
+.callout.da-completare {
+  background: #FBF3DC;
+  border: 1px dashed $rubrica-viva;
+  border-left: 5px solid $rubrica-viva;
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+.callout.da-completare .callout-title { color: $rubrica; }
 
 // Convenzioni diplomatiche: scioglimenti in corsivo, lacune in
 // tondo fra parentesi quadre. Classi da usare nelle trascrizioni.

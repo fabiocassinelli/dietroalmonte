@@ -21,3 +21,8 @@ ECCEZIONI
 2. Il codice sorgente del sito (configurazione Quarto, fogli di stile,
    script, workflow) è rilasciato con licenza MIT e può essere riusato
    liberamente, anche commercialmente.
+
+3. I caratteri tipografici Fraunces e Spectral, nella cartella
+   assets/fonts/, appartengono ai rispettivi autori e sono distribuiti
+   con licenza SIL Open Font License 1.1 (vedi i file LICENZA-*.txt
+   nella stessa cartella).

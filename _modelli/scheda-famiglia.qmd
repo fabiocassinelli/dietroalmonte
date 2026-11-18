@@ -1,0 +1,23 @@
+---
+title: "COGNOME (forma latina o antica)"
+subtitle: "Attestati a LUOGO dal ANNO"
+description: "Varianti del cognome, rami, prima attestazione, ricerche collegate."
+categories: [luogo, comune]
+date-modified: last-modified
+---
+
+## Varianti grafiche
+
+*forma latina*, *altra forma*, forma moderna.
+
+## Prima attestazione
+
+Una frase, con la nota archivistica.[@SIGLA_FONDO_UNITA, doc. 00 (AAAA mese GG)]
+
+## Rami
+
+Da compilare.
+
+## Ricerche
+
+- [Titolo della ricerca](../ricerche/AAAA-MM-nome/index.qmd)

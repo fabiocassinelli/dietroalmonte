@@ -5,7 +5,7 @@ toc: false
 ---
 
 ::: {.column-margin}
-[ORCID](https://orcid.org/0009-0009-4455-0112)
+[ORCID 0009-0009-4455-0112](https://orcid.org/0009-0009-4455-0112)
 
 [fabiocassinelli94@gmail.com](mailto:fabiocassinelli94@gmail.com)
 :::
@@ -32,12 +32,13 @@ Mi farebbe piacere saperlo. Non ho una formazione specialistica in
 paleografia o diplomatica: leggo le carte come posso, imparando strada
 facendo, ed è possibile che qualche trascrizione o qualche lettura mi
 sfugga. Se te ne accorgi, scrivimi: correggo volentieri, ed è anche
-il modo in cui questo lavoro migliora nel tempo.
+il modo in cui questo lavoro migliora nel tempo. Ogni correzione resta
+visibile nella cronologia delle revisioni in fondo alla ricerca.
 
 ## Se cerchi la tua famiglia
 
 Ricevo qualche richiesta ogni tanto e non riesco a fare ricerche su
 commissione — è già tanto se trovo il tempo per le mie. Ma se il tuo
-Cassinelli compare in queste pagine scrivimi comunque: a volte ho
+cognome compare in queste pagine scrivimi comunque: a volte ho
 materiale che non ho ancora pubblicato, e a volte è la tua
 informazione a completare la mia.

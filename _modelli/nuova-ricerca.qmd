@@ -1,0 +1,73 @@
+---
+title: "TITOLO"
+subtitle: "SOTTOTITOLO: dove, quando, chi"
+description: >
+  Due righe che dicono a un lettore non specialista perché questa ricerca
+  esiste. Compaiono nell'elenco delle ricerche.
+date: DATA
+categories: [luogo, famiglia, tipo di fonte, secolo]
+# BOZZA: finché c'è questa riga la ricerca si vede solo nell'anteprima
+# sul tuo computer. Cancellala quando è pronta per essere pubblicata.
+draft: true
+# VERSIONE CITABILE: togli il cancelletto quando la ricerca è matura.
+# GitHub creerà da solo PDF, Release e deposito su Zenodo.
+# versione: "1.0"
+doi: ""
+citation:
+  type: webpage
+  container-title: "Dietro al Monte"
+  url: https://dietroalmonte.it/ricerche/CARTELLA/
+abstract: >
+  Cinque-otto righe in tono sobrio: che cosa si sapeva, quali documenti
+  hai trovato, che cosa cambiano. È il testo che accompagna il deposito
+  su Zenodo.
+---
+
+Apertura: un fatto concreto, una scena, una persona. Due o tre paragrafi
+senza apparato pesante. Se scrivi in Word, tutto il testo da qui fino
+alla riga «CODA» viene sostituito dalla conversione.
+
+## Che cosa si sapeva
+
+Che cosa dicono gli studi esistenti, che cosa non torna.
+
+## I documenti
+
+### Titolo del primo documento
+
+Testo, con citazione archivistica in nota.[@SIGLA_FONDO_UNITA, doc. 00 (AAAA mese GG)]
+
+Una nota di commento, scritta a mano.[^1]
+
+[^1]: Il testo della nota.
+
+::: {.callout-note collapse="true" appearance="simple" class="trascrizione"}
+## Regesto e trascrizione — SIGLA, fondo, unità, doc.
+
+**AAAA mese GG, luogo.**
+
+*Regesto.* Riassunto in una frase, con i nomi in forma moderna.
+
+*Trascrizione.*
+
+> Testo del documento...
+
+*Note alla trascrizione.* Stato della carta, lacune, letture incerte.
+:::
+
+## La ricostruzione
+
+Qui albero, mappa, grafico (modelli in `_modelli/esempio-rossi/`).
+
+## Piste aperte
+
+- Dire che cosa NON sai è parte della ricerca.
+
+<!-- CODA — da qui in giù la conversione da Word non tocca nulla -->
+
+## Fonti archivistiche e bibliografia
+
+::: {#refs}
+:::
+
+{{< include _revisioni.md >}}

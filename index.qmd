@@ -1,10 +1,10 @@
 ---
 pagetitle: "Dietro al Monte"
-description-meta: "Ricerche d'archivio su paesi e famiglie dell'alto Appennino ligure-emiliano: Scurtabò, Sopralacroce, Santa Maria del Taro."
+description-meta: "Ricerche d'archivio su paesi e famiglie dell'alto Appennino ligure-emiliano: Scurtabò, Cassego, Sopralacroce, Santa Maria del Taro."
 toc: false
 listing:
   id: ultime
-  contents: ricerche
+  contents: "ricerche/*/index.qmd"
   type: default
   sort: "date desc"
   max-items: 5
@@ -15,9 +15,9 @@ listing:
 ::: {.apertura}
 # Dietro al Monte {.unnumbered}
 
-Ricerche condotte sui fondi notarili, parrocchiali e feudali degli archivi
-italiani, per ricostruire come sono vissute le famiglie dei paesi
-dell'alto Appennino ligure-emiliano fra il Quattrocento e l'Ottocento.
+Ricerche d'archivio sui paesi e sulle famiglie del Levante ligure e
+dell'alto Appennino ligure-emiliano: che cosa è accaduto, nei secoli,
+alle persone che hanno abitato queste montagne.
 
 Ogni ricerca dichiara le proprie fonti documento per documento, resta
 modificabile nel tempo e conserva la storia delle proprie revisioni.
@@ -37,6 +37,6 @@ modificabile nel tempo e conserva la storia delle proprie revisioni.
 ## Da dove cominciare
 
 Se cerchi un paese, parti dalle [schede dei luoghi](luoghi/index.qmd).
-Se cerchi un Cassinelli, dalle [schede delle famiglie](famiglie/index.qmd).
+Se cerchi un cognome, dalle [schede delle famiglie](famiglie/index.qmd).
 Se vuoi sapere su quali fondi si regge tutto questo e come vengono
 trascritti i documenti, leggi il [metodo](metodo.qmd).

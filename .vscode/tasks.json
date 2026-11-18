@@ -1,0 +1,45 @@
+{
+  // Attività di «Dietro al Monte».
+  // Si lanciano da: Terminale → Esegui attività...  (oppure Ctrl+Shift+P → «Esegui attività»)
+  "version": "2.0.0",
+  "options": { "env": { "PYTHONUTF8": "1" } },
+  "presentation": { "reveal": "always", "focus": true, "panel": "shared", "clear": true },
+  "problemMatcher": [],
+  "tasks": [
+    {
+      "label": "Word → converti la bozza",
+      "detail": "Porta bozza.docx dentro index.qmd (scheda in alto e coda restano intatte)",
+      "type": "shell",
+      "command": "python scripts/converti_word.py",
+      "problemMatcher": []
+    },
+    {
+      "label": "Nuova ricerca",
+      "detail": "Crea la cartella con index.qmd, bozza.docx e tutto il necessario",
+      "type": "shell",
+      "command": "python scripts/nuova_ricerca.py \"${input:titolo}\"",
+      "problemMatcher": []
+    },
+    {
+      "label": "Controlla che cosa manca",
+      "detail": "Elenca DA COMPLETARE, segnaposto e citazioni senza fonte",
+      "type": "shell",
+      "command": "python scripts/controlla.py",
+      "problemMatcher": []
+    },
+    {
+      "label": "Configura la firma (una volta sola)",
+      "detail": "Crea la chiave e fa firmare a Git ogni modifica di questo progetto",
+      "type": "shell",
+      "command": "python scripts/configura_firma.py",
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "titolo",
+      "type": "promptString",
+      "description": "Titolo della nuova ricerca (lo potrai cambiare)"
+    }
+  ]
+}

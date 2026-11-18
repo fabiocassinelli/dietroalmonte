@@ -9,6 +9,6 @@ listing:
   fields: [title, subtitle, description]
 ---
 
-Ogni scheda raccoglie quello che sappiamo di un insediamento — nomi
-antichi, dipendenze feudali ed ecclesiastiche, famiglie attestate — e
-rimanda alle ricerche che lo riguardano.
+Ogni scheda raccoglie quello che so di un insediamento — nomi antichi,
+dipendenze, famiglie attestate — e rimanda alle ricerche che lo
+riguardano.

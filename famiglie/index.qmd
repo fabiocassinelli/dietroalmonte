@@ -9,6 +9,15 @@ listing:
   fields: [title, subtitle, categories]
 ---
 
-Le schede seguono il Cassinelli attraverso i documenti: prima attestazione,
-varianti grafiche, rami, spostamenti. Sono pagine vive, che si arricchiscono
-a ogni nuova ricerca.
+Le schede seguono un cognome attraverso i documenti: prima attestazione,
+varianti grafiche, rami, spostamenti. Sono pagine vive, che si
+arricchiscono a ogni nuova ricerca.
+
+::: {.da-completare}
+## DA COMPLETARE — la prima scheda di famiglia
+
+Non c'è ancora nessuna scheda. Per crearne una copia il file
+`_modelli/scheda-famiglia.qmd` in questa cartella, con il nome del
+cognome in minuscolo (per esempio `famiglie/servente.qmd`), e compilalo.
+Comparirà da sola nell'elenco qui sotto.
+:::

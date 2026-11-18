@@ -1,7 +1,7 @@
 ---
 title: "Rossi (de Rubeis)"
 subtitle: "Attestati a Scurtabò dal 1432"
-description: "Varianti del Cassinelli, rami, prima attestazione, ricerche collegate."
+description: "Varianti del cognome, rami, prima attestazione, ricerche collegate."
 categories: [Scurtabò, Varese Ligure]
 date-modified: last-modified
 ---

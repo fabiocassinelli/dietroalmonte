@@ -1,0 +1,30 @@
+---
+title: "NOME DEL PAESE"
+subtitle: "Frazione di COMUNE, VALLE (PROVINCIA)"
+description: "Nomi antichi, dipendenze, famiglie attestate e ricerche collegate."
+date-modified: last-modified
+---
+
+::: {.column-margin}
+**Comune** ...
+
+**Zona** ...
+:::
+
+## Nomi e attestazioni
+
+| Forma | Anno | Fonte |
+|---|---|---|
+| *Forma antica* | AAAA | [@SIGLA_FONDO_UNITA, doc. 00 (AAAA mese GG)] |
+
+## Dipendenze
+
+Signoria, pieve o parrocchia, podesteria, comune moderno.
+
+## Famiglie attestate
+
+- [Cognome](../famiglie/cognome.qmd)
+
+## Ricerche su questo luogo
+
+- [Titolo della ricerca](../ricerche/AAAA-MM-nome/index.qmd)

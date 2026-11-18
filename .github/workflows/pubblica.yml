@@ -1,0 +1,122 @@
+name: Pubblica il sito
+
+# Parte da solo a ogni «Commit e Sync» sul ramo main. Fa quattro cose:
+#   1. sito      controlla i testi, scrive la cronologia delle revisioni,
+#                costruisce il sito con Quarto
+#   2. pubblica  lo mette online su GitHub Pages
+#   3. marca     marca temporale OpenTimestamps di tutti i file
+#   4. versioni  per le ricerche con una nuova «versione:» nella scheda,
+#                crea PDF + Release (da cui Zenodo assegna il DOI)
+#
+# Si può anche avviare a mano: scheda Actions → Pubblica il sito → Run workflow.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pubblica
+  cancel-in-progress: false
+
+env:
+  # Versione di Quarto usata per costruire il sito. Per aggiornarla,
+  # cambia il numero qui (e installa la stessa sul tuo computer).
+  QUARTO_VERSION: "1.11.9"
+
+jobs:
+  sito:
+    name: Costruisci il sito
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0          # tutta la storia: serve alla cronologia
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: ${{ env.QUARTO_VERSION }}
+
+      - name: Controlla i testi
+        run: python scripts/controlla.py --ci
+
+      - name: Scrivi la cronologia delle revisioni
+        run: python scripts/revisioni.py
+
+      - name: Costruisci il sito
+        run: quarto render
+        env:
+          DAM_PUBBLICA: "1"       # toglie i riquadri DA COMPLETARE
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  pubblica:
+    name: Metti online
+    needs: sito
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
+
+  marca:
+    name: Marca temporale
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Installa il client OpenTimestamps
+        run: pip install --quiet opentimestamps-client
+
+      - name: Marca i file e salva nel ramo marche-temporali
+        run: python scripts/marca.py
+
+  versioni:
+    name: Versioni citabili (PDF, Release, Zenodo)
+    needs: sito
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0          # servono anche le etichette già create
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: ${{ env.QUARTO_VERSION }}
+
+      - name: Installa gli strumenti
+        run: pip install --quiet pyyaml opentimestamps-client
+
+      - name: Scrivi la cronologia delle revisioni
+        run: python scripts/revisioni.py
+
+      - name: Crea le nuove versioni
+        run: python scripts/rilascio.py
+        env:
+          GH_TOKEN: ${{ github.token }}

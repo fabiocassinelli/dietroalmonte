@@ -15,6 +15,6 @@ listing:
   page-size: 20
 ---
 
-Ogni ricerca ha un identificatore DOI permanente, una cronologia delle
-revisioni e una marca temporale verificabile. I criteri sono spiegati
-nel [metodo](../metodo.qmd).
+Ogni ricerca porta in fondo la cronologia delle proprie revisioni e le
+indicazioni per citarla. Come verificarne autore e data è spiegato nel
+[metodo](../metodo.qmd).

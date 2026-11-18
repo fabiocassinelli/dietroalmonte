@@ -27,105 +27,136 @@ ortografiche dei nomi propri.
 riduzione allo stile moderno. Nei documenti genovesi tengo conto dello
 stile della Natività.
 
-**Nomi.** In testo uso la forma italiana moderna; nelle note e nelle
+**Nomi.** Nel testo uso la forma italiana moderna; nelle note e nelle
 trascrizioni la forma del documento. Le varianti sono raccolte nelle
 [schede di famiglia](famiglie/index.qmd).
 
 **Monete e misure.** Lascio i valori nell'unità del documento e do
 l'equivalenza in nota solo quando serve al ragionamento.
 
+::: {.da-completare}
+## DA COMPLETARE — conferma i criteri di edizione
+
+I criteri qui sopra sono una proposta ragionevole, non una descrizione
+di ciò che fai. Leggili uno per uno e correggi quelli che non
+corrispondono al tuo modo di trascrivere, poi cancella questo riquadro.
+:::
+
 ## Che cosa è mio e che cosa no
 
 I testi, le mappe, gli alberi genealogici, i grafici e le trascrizioni
-di questo sito sono opera mia. Le fonti d'archivio non lo sono: sono
-beni culturali pubblici, citati con la loro segnatura perché chiunque
-possa andare a controllare.
+di questo sito sono opera mia. Le fonti d'archivio non lo sono: le cito
+con la loro segnatura perché chiunque possa andare a controllare.
 
 Tutto il sito è pubblicato sotto licenza
 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it):
 puoi copiare e rielaborare questi materiali per scopi non commerciali,
-a condizione di citarmi e di mantenere la stessa licenza.
+a condizione di citarmi e di mantenere la stessa licenza. Il sito non
+ospita pubblicità.
 
 ## Come citare
 
-Ogni ricerca ha in fondo un riquadro *Citazione* con la forma completa e
-il DOI. La forma generale è:
+Ogni ricerca ha in fondo un riquadro *Citazione* con la forma completa.
+La forma generale è:
 
 > Fabio Cassinelli, «Titolo della ricerca», *Dietro al Monte*, versione
-> 1.2, 14 marzo 2026, DOI 10.5281/zenodo.XXXXXXX.
+> 1.0, data, DOI.
 
 Cita sempre il numero di versione: le ricerche cambiano quando emergono
-documenti nuovi, e il DOI di versione punta allo stato esatto che hai
-letto.
+documenti nuovi, e il DOI di una versione punta allo stato esatto che
+hai letto.
 
 ## Paternità e data certa
 
-Non chiedo di fidarvi. Ogni testo di questo sito porta con sé cinque
-tracce indipendenti, tutte verificabili da chiunque senza passare da me.
+Per ogni testo di questo sito si può verificare chi l'ha scritto e
+quando, senza doversi fidare di me. La catena ha tre anelli che
+funzionano da soli, più un quarto facoltativo.
 
-### 1. Firma crittografica
+### 1. Ogni modifica è firmata
 
-Ogni modifica è registrata in un repository Git pubblico e firmata con
-una chiave crittografica che possiedo solo io. GitHub verifica la firma
-e marca ogni modifica come *Verified*. Chi controlla vede non solo il
-testo finale, ma l'intero processo di scrittura, giorno per giorno.
+Tutto il sito — testi, dati, perfino l'aspetto grafico — vive in un
+archivio pubblico su GitHub che conserva ogni modifica, con la sua data.
+Ogni modifica è firmata con una chiave crittografica che possiedo solo
+io: GitHub controlla la firma e la segnala con l'etichetta *Verified*.
+Chi guarda non vede solo il testo finito, ma il lavoro giorno per giorno.
 
-Repository: <https://github.com/fabiocassinelli/dietroalmonte>
+Archivio pubblico: <https://github.com/fabiocassinelli/dietroalmonte>
 
-### 2. Marca temporale su blockchain
+### 2. Ogni pubblicazione riceve una marca temporale
 
-Al momento della pubblicazione, l'impronta digitale di ogni file viene
-registrata con [OpenTimestamps](https://opentimestamps.org) nella
-blockchain Bitcoin. Nel repository, accanto a ogni ricerca, trovi un
-file `.ots`. Per verificarlo:
+A ogni pubblicazione un programma automatico calcola l'«impronta» di
+ciascun file del sito: una sequenza di lettere e cifre che cambia del
+tutto se nel file cambia anche solo una virgola. L'elenco delle impronte
+viene poi marcato con [OpenTimestamps](https://opentimestamps.org), che
+ne ancora l'esistenza alla blockchain di Bitcoin. Da quel momento
+chiunque può dimostrare che quel testo, esattamente in quella forma,
+esisteva già a quella data. Nessuno — me compreso — può retrodatarlo.
 
-```bash
-pip install opentimestamps-client
-ots verify ricerche/NOME-RICERCA/index.qmd.ots
-```
+Elenchi e marche stanno nello stesso archivio pubblico, nel ramo
+[`marche-temporali`](https://github.com/fabiocassinelli/dietroalmonte/tree/marche-temporali).
 
-Il comando restituisce la data in cui quel testo, esattamente in quella
-forma, esisteva già. Nessuno — me compreso — può alterarla.
+### 3. Ogni versione citabile è depositata con un DOI
 
-### 3. DOI e archiviazione permanente
+Quando considero matura una ricerca le assegno un numero di versione.
+Quella versione — il PDF e tutti i sorgenti — viene depositata su
+[Zenodo](https://zenodo.org), l'archivio aperto gestito dal CERN, che la
+conserva e le assegna un DOI collegato al mio identificativo
+[ORCID](https://orcid.org/0009-0009-4455-0112). Le versioni precedenti
+non spariscono: restano su Zenodo, ciascuna con il suo DOI.
 
-Ogni versione definitiva è depositata su
-[Zenodo](https://zenodo.org), il repository del CERN, che ne conserva
-una copia permanente e le assegna un DOI legato al mio identificativo
-[ORCID](https://orcid.org/0009-0009-4455-0112). È la forma di deposito
-riconosciuta dalla comunità scientifica internazionale.
+### 4. Marca temporale qualificata (facoltativa)
 
-### 4. Marca temporale qualificata
+Le tre tracce qui sopra sono verificabili da chiunque, ma non sono
+«marche temporali qualificate» nel senso del Regolamento europeo eIDAS
+(UE) n. 910/2014. Alle ricerche a cui tengo di più posso aggiungere,
+sul PDF depositato, anche la marca di un prestatore di servizi fiduciari
+qualificato, che la legge presume esatta fino a prova contraria. Quando
+c'è, è indicato in fondo alla ricerca.
 
-Le ricerche principali sono inoltre corredate di marca temporale
-qualificata ai sensi del Regolamento eIDAS (UE) 910/2014 e del Codice
-dell'Amministrazione Digitale, rilasciata da un prestatore di servizi
-fiduciari accreditato. È lo strato con pieno valore probatorio davanti
-a un'autorità giudiziaria italiana ed europea.
+### Che cosa prova tutto questo, e che cosa no
 
-### 5. Archiviazione di terze parti
-
-Il repository è archiviato integralmente, con tutta la sua storia, da
-[Software Heritage](https://www.softwareheritage.org) e le pagine sono
-depositate nella [Wayback Machine](https://web.archive.org).
+Prova che un certo testo esisteva a una certa data e che è stato
+pubblicato da chi possiede la mia chiave. Non prova che io abbia
+ragione: per quello ci sono le note, le segnature e la possibilità di
+andare in archivio a controllare.
 
 ::: {.callout-note collapse="true" appearance="simple"}
-## Verificare una ricerca in tre comandi
+## Come verificare una ricerca, passo per passo
 
-```bash
-git clone https://github.com/fabiocassinelli/dietroalmonte
-cd dietroalmonte
-git log --show-signature -- ricerche/NOME-RICERCA/
-ots verify ricerche/NOME-RICERCA/index.qmd.ots
-```
+**La firma.** Apri l'archivio pubblico, entra nella cartella della
+ricerca e premi *History*: accanto a ogni modifica compare *Verified*.
 
-Il primo comando ti dà il testo, il secondo chi l'ha scritto e quando,
-il terzo una data indipendente da GitHub e da me.
+**La marca temporale.** Servono il file della ricerca (`index.qmd`,
+dalla sua cartella nell'archivio) e, dal ramo `marche-temporali`, un
+elenco di impronte (`.sha256`) con la sua marca (`.sha256.ots`).
+
+1. Calcola l'impronta del file della ricerca. Su Windows, nel Prompt
+   dei comandi:
+
+   ```
+   certutil -hashfile index.qmd SHA256
+   ```
+
+2. Apri l'elenco `.sha256` con un editor di testo e cerca quell'impronta:
+   se c'è, il file esisteva in quella forma quando l'elenco è stato creato.
+3. Verifica la data dell'elenco: trascina il file `.sha256.ots` e poi il
+   file `.sha256` su <https://opentimestamps.org>, oppure usa il programma:
+
+   ```
+   pip install opentimestamps-client
+   ots verify NOME-ELENCO.sha256.ots
+   ```
+
+La marca diventa verificabile in modo definitivo qualche ora dopo la
+pubblicazione, quando la blockchain l'ha registrata.
+
+**Il DOI.** Apri il DOI indicato nel riquadro *Citazione*: porta alla
+copia depositata su Zenodo, con la data di deposito.
 :::
 
 ## Errori
 
-Se trovi un errore, scrivimi: lo correggo, e la correzione resta
-visibile nella cronologia delle revisioni in fondo alla ricerca. Le
-versioni precedenti non spariscono mai — restano nel repository e su
-Zenodo, con il loro DOI.
+Se trovi un errore, [scrivimi](chi-sono.qmd): lo correggo, e la
+correzione resta visibile nella cronologia delle revisioni in fondo alla
+ricerca. Le versioni precedenti non spariscono mai: restano
+nell'archivio pubblico e, se depositate, su Zenodo con il loro DOI.

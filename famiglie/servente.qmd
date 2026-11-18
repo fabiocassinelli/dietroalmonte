@@ -1,0 +1,32 @@
+---
+title: "Servente"
+subtitle: "DA COMPLETARE: dove e da quando sono attestati"
+description: "Varianti del cognome, rami, prima attestazione, ricerche collegate."
+categories: [Varese Ligure]
+date-modified: last-modified
+# BOZZA: cancella questa riga quando la scheda è pronta.
+draft: true
+---
+
+::: {.da-completare}
+## DA COMPLETARE — la scheda dei Servente
+
+Il cognome compare nella ricerca sul delitto di Chilinella (1577).
+Compila le sezioni qui sotto quando hai i documenti; il modello completo
+è in `_modelli/scheda-famiglia.qmd`. Esempio esatto di una riga (dati
+inventati):
+
+```markdown
+Prima attestazione nota: 1500.[@ASGe_FONDO_0000, doc. 12 (1500 marzo 3)]
+```
+:::
+
+## Varianti grafiche
+
+## Prima attestazione
+
+## Rami
+
+## Ricerche
+
+- [Il delitto di Chilinella](../ricerche/2026-09-delitto-chilinella-1577/index.qmd)

@@ -1,0 +1,20 @@
+{
+  // Pubblicare con un solo gesto: il pulsante «Commit» registra tutte le
+  // modifiche e le invia subito a GitHub (Commit e Sync insieme).
+  "git.enableSmartCommit": true,
+  "git.postCommitCommand": "sync",
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  // Se le versioni su GitHub e sul computer divergono, le riallinea senza domande.
+  "git.rebaseWhenSync": true,
+
+  // Scrittura: testo a capo automatico, niente spazi superflui a fine riga.
+  "[quarto]": { "editor.wordWrap": "on", "editor.quickSuggestions": { "other": "off" } },
+  "[markdown]": { "editor.wordWrap": "on" },
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+
+  // Nasconde dall'elenco dei file ciò che viene rigenerato da solo.
+  "files.exclude": { "_site": true, ".quarto": true, "**/__pycache__": true },
+  "search.exclude": { "_site": true, ".quarto": true, "assets/csl/chicago-notes-bibliography.csl": true }
+}

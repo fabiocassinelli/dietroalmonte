@@ -1,13 +1,16 @@
 # Stile citazionale
 
-`appennino-archivistico.csl` è lo stile in uso, scritto su misura per
+Gli esempi di questa pagina mostrano solo la forma: non rimandano a
+documenti reali.
+
+`dietroalmonte-archivistico.csl` è lo stile in uso, scritto su misura per
 questo sito. È già nel repository: non serve scaricare nulla.
 
 ## Che cosa fa
 
 Note a piè di pagina nella forma archivistica italiana, istituto per primo:
 
-    ASGe, Notai Antichi, 1123, notaio Antonio da Cogorno, doc. 47 (1432 aprile 12).
+    ASGe, Notai Antichi, 1123, notaio X, doc. 47 (1432 aprile 12).
 
 Alla seconda citazione della stessa unità la forma si accorcia:
 
@@ -18,9 +21,8 @@ Alla ripetizione immediata: `Ibid.`
 Nell'elenco delle fonti, in fondo alla pagina, l'istituto compare per
 esteso con tipologia ed estremi:
 
-    Archivio di Stato di Genova, Notai Antichi, 1123, notaio Antonio da
-    Cogorno. Registro notarile, 1428. Estremi 1428-1441. Danni da umidità
-    sui margini esterni.
+    Archivio di Stato di Genova, Notai Antichi, 1123, notaio X.
+    Registro notarile, 1428. Estremi 1428-1441.
 
 Per le opere a stampa usa la forma italiana corrente: autore, titolo,
 luogo, editore, anno; alla seconda citazione autore, titolo breve, *cit.*
@@ -33,7 +35,7 @@ luogo, editore, anno; alla seconda citazione autore, titolo breve, *cit.*
 | `publisher` | nome per esteso | Archivio di Stato di Genova | Extra: `publisher: ...` |
 | `title` | fondo o serie | Notai Antichi | Titolo |
 | `call-number` | unità (filza, registro, busta) | 1123 | Segnatura |
-| `archive_location` | intitolazione dell'unità | notaio Antonio da Cogorno | Collocazione nell'archivio |
+| `archive_location` | intitolazione dell'unità | notaio X | Collocazione nell'archivio |
 | `genre` | tipologia | Registro notarile | Tipo |
 | `issued` | anno iniziale | 1428 | Data |
 | `note` | estremi, lacune, stato | Estremi 1428-1441 | Note (campo Extra) |
@@ -53,10 +55,7 @@ la punteggiatura delle citazioni d'archivio: cambia l'ordine dei
 
 ## Alternative
 
-Se preferisci uno stile internazionale già pronto:
-
-    make csl        # scarica chicago-notes-bibliography.csl
-
-poi cambia la chiave `csl:` in `_quarto.yml`. Perderai la forma
-archivistica italiana: Chicago mette il titolo per primo e l'archivio
-in coda.
+Se preferisci uno stile internazionale già pronto, nella stessa cartella
+c'è `chicago-notes-bibliography.csl`: per usarlo cambia la riga `csl:` in
+`_quarto.yml`. Perderai la forma archivistica italiana: Chicago mette il
+titolo per primo e l'archivio in coda.

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "ASGe_NA_1123",
+    "type": "manuscript",
+    "title": "Notai Antichi",
+    "call-number": "1123",
+    "archive_location": "notaio Antonio da Cogorno",
+    "archive": "ASGe",
+    "publisher": "Archivio di Stato di Genova",
+    "publisher-place": "Genova",
+    "genre": "Registro notarile",
+    "issued": { "date-parts": [[1428]] },
+    "note": "Estremi 1428-1441. Danni da umidità sui margini esterni."
+  },
+  {
+    "id": "ASGe_NA_1147",
+    "type": "manuscript",
+    "title": "Notai Antichi",
+    "call-number": "1147",
+    "archive_location": "notaio Bartolomeo de Bracelli",
+    "archive": "ASGe",
+    "publisher": "Archivio di Stato di Genova",
+    "publisher-place": "Genova",
+    "genre": "Registro notarile",
+    "issued": { "date-parts": [[1444]] },
+    "note": "Estremi 1444-1459."
+  },
+  {
+    "id": "APS_Battesimi_1",
+    "type": "manuscript",
+    "title": "Battesimi",
+    "call-number": "1",
+    "archive": "APS",
+    "publisher": "Archivio Parrocchiale di Scurtabò",
+    "publisher-place": "Scurtabò (Varese Ligure)",
+    "genre": "Registro parrocchiale",
+    "issued": { "date-parts": [[1595]] },
+    "note": "Estremi 1595-1663. Lacuna 1630-1638."
+  },
+  {
+    "id": "ASDBr_VP_3",
+    "type": "manuscript",
+    "title": "Visite pastorali",
+    "call-number": "3",
+    "archive_location": "visita del 1583",
+    "archive": "ASDBr",
+    "publisher": "Archivio Storico Diocesano di Brugnato",
+    "publisher-place": "Brugnato",
+    "genre": "Visita pastorale",
+    "issued": { "date-parts": [[1583]] }
+  }
+]

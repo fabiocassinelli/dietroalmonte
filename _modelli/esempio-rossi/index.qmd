@@ -28,6 +28,11 @@ format:
 
 <!--
   ─────────────────────────────────────────────────────────────────
+  ESEMPIO INVENTATO. Persone, documenti, segnature e date di questa
+  pagina NON ESISTONO: servono solo a mostrare come si scrive una
+  ricerca completa (note, regesto, albero, mappa, grafico).
+  La cartella _modelli/ non viene mai pubblicata.
+
   Questo file è insieme un esempio e un modello di scrittura.
   I commenti come questo spiegano le scelte e vanno cancellati.
 
@@ -96,7 +101,7 @@ Scurtabò dividono fra loro i beni paterni: a Giovanni la casa
 con l'aia e il pascolo sul monte Penna in territorio di Santa Maria del
 Taro; ad Antonio i castagneti di Costa Lunga; a Bartolomeo i prati di
 Chiazzanico e un censo annuo di quattro lire. Testimoni: il prete
-Simone, rettore di San Cassinelli, e Giacomo fu Andrea de Cuneo.
+Simone, rettore di San Nome, e Giacomo fu Andrea de Cuneo.
 
 *Trascrizione.*
 
@@ -230,7 +235,7 @@ realtà: dal 1461 i notai di Varese rogano su filze oggi conservate altrove.
   ricomparire in atti successivi sulla stessa filza.
 - Manca del tutto la documentazione fra il 1465 e il 1595. Il legame fra
   i de Rubeis quattrocenteschi e i Rossi settecenteschi resta, per ora,
-  un'ipotesi fondata sulla continuità del Cassinelli e dei beni, non una
+  un'ipotesi fondata sulla continuità del cognome e dei beni, non una
   filiazione dimostrata.
 
 ## Fonti archivistiche e bibliografia

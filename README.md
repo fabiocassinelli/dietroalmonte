@@ -1,587 +1,274 @@
 # Dietro al Monte
 
-Sito per pubblicare ricerche storiche d'archivio in una forma che sia
-insieme leggibile, citabile e verificabile: ogni testo resta modificabile
-nel tempo, conserva la storia delle proprie revisioni e porta con sé la
-prova di chi l'ha scritto e quando.
+Il sito su cui pubblico le mie ricerche d'archivio: <https://dietroalmonte.it>.
+Costruito con [Quarto](https://quarto.org), pubblicato da GitHub Actions su
+GitHub Pages.
 
-Costruito con [Quarto](https://quarto.org). Si pubblica da solo a ogni
-`git push`.
+**Il lavoro di tutti i giorni è in tre gesti:** scrivo → guardo l'anteprima
+(`Ctrl+Shift+K`) → premo **Commit** nel pannello *Source Control* di VS Code.
+Come si scrive è spiegato in una pagina: [GUIDA.md](GUIDA.md).
 
----
+Tutto il resto succede da solo su GitHub, a ogni Commit:
 
-## Indice
-
-1. [Installazione, una volta sola](#1-installazione-una-volta-sola-windows)
-2. [Personalizzazione iniziale](#2-personalizzazione-iniziale)
-3. [Messa online](#3-messa-online)
-4. [Firma e marche temporali](#4-firma-e-marche-temporali)
-5. [Zenodo e DOI](#5-zenodo-e-doi)
-6. [Il ciclo di una ricerca](#6-il-ciclo-di-una-ricerca)
-7. [Come si scrive una ricerca](#7-come-si-scrive-una-ricerca)
-8. [Le fonti e Zotero](#8-le-fonti-e-zotero)
-9. [Mappe, alberi, grafici](#9-mappe-alberi-grafici)
-10. [Riferimento dei comandi](#10-riferimento-dei-comandi)
-11. [Struttura delle cartelle](#11-struttura-delle-cartelle)
-
----
-
-## 1. Installazione, una volta sola (Windows)
-
-Ogni strumento qui sotto ha un installer grafico ufficiale: scarichi,
-fai doppio clic, clicchi *Avanti* fino in fondo. L'unica eccezione è
-un piccolissimo pacchetto Python (OpenTimestamps) che non ha un
-installer grafico — per quello serve incollare una riga in una
-finestra di testo, spiegato al punto 6. Tutto il resto è scarica e
-clicca.
-
-Un avviso che vale per tutti gli installer: durante l'installazione
-compare quasi sempre una casella tipo *"Aggiungi al PATH"*, spesso
-**non spuntata di default**. Spuntala sempre. Se la salti, il
-programma si installa comunque ma Windows non lo trova quando lo
-richiami da terminale, e l'unico modo per sistemare è disinstallare e
-rifare da capo quella schermata.
-
-1. **Git for Windows** — <https://git-scm.com/download/win>
-   Il sito rileva Windows e propone il download giusto. Avvia
-   l'installer e clicca *Avanti* accettando tutte le opzioni
-   predefinite: installano già "Git Bash" (il terminale che userai
-   d'ora in poi per i comandi di questo progetto) e aggiungono Git al
-   PATH da soli.
-
-2. **Quarto** — <https://quarto.org/docs/get-started/>
-   Il sito offre direttamente il file `.msi` per Windows. Doppio clic,
-   *Avanti* → *Avanti* → *Installa*.
-
-3. **Python** — <https://www.python.org/downloads/windows/>
-   Scarica "Windows installer (64-bit)" dell'ultima versione. Nella
-   **prima schermata** dell'installer, in basso, spunta **"Add
-   python.exe to PATH"** prima di cliccare *Install Now* — è la
-   casella che salta più spesso.
-
-4. **Graphviz**, per gli alberi genealogici —
-   <https://graphviz.org/download/>
-   Nella sezione Windows scarica l'installer `.exe` (non lo ZIP).
-   Durante l'installazione scegli **"Add Graphviz to the system PATH
-   for current user"** quando te lo chiede.
-
-5. **VS Code** — <https://code.visualstudio.com/download>
-   Scarica il "User Installer" per Windows (non serve essere
-   amministratore). Nella schermata *"Select Additional Tasks"*
-   lascia spuntato *"Add to PATH"*. Poi apri VS Code, vai su
-   Estensioni (`Ctrl+Shift+X`), cerca **"Quarto"** e installa
-   l'estensione ufficiale: ti dà l'anteprima affiancata mentre scrivi.
-
-6. **Client OpenTimestamps**, per le marche temporali — l'eccezione di
-   cui sopra. Apri **Git Bash** dal menu Start (si è installato al
-   punto 1) e incolla:
-
-   ```bash
-   pip install opentimestamps-client
-   ```
-
-   Invio, aspetti qualche secondo, fatto. Non ti servirà riaprire Git
-   Bash per altro fino a quando non inizierai a scrivere davvero.
-
-**Verifica.** Chiudi Git Bash e riaprilo — Windows aggiorna il PATH
-solo sulle finestre nuove — poi lancia uno per uno: `git --version`,
-`quarto --version`, `python --version`, `dot -V`. Se uno risulta "non
-riconosciuto", quasi sempre è la casella del PATH saltata in
-quell'installer: disinstalla da *Impostazioni → App* e reinstalla
-prestando attenzione a quella schermata.
-
-Poi, dentro la cartella del progetto, in Git Bash:
-
-```bash
-quarto preview
-```
-
-Se l'anteprima si apre nel browser, hai finito l'installazione. Lo
-stile citazionale è già nel repository: non c'è nulla da scaricare.
-
----
-
-## 2. Personalizzazione iniziale
-
-Cerca e sostituisci in tutto il repository:
-
-| Segnaposto | Sostituisci con |
+| Che cosa | Come |
 |---|---|
-| `Cassinelli` | il tuo Cassinelli |
-| `fabiocassinelli` | il tuo nome fabiocassinelli GitHub |
-| `0009-0009-4455-0112` | il tuo ORCID iD |
-| `dietroalmonte.it` | il dominio che hai registrato |
-| `fabiocassinelli94@gmail.com` | il tuo indirizzo |
-
-In Git Bash, dentro la cartella del progetto:
-
-```bash
-grep -rl 'Cassinelli' . --exclude-dir=.git | xargs sed -i 's/Cassinelli/Rossi/g'
-```
-
-Ripeti lo stesso comando per `fabiocassinelli` e per l'ORCID, cambiando solo la
-parola da cercare e il testo di sostituzione.
-
-Poi metti un `assets/favicon.png` — va bene anche un semplice quadrato
-d'ardesia con un'iniziale.
-
-Prendi l'**ORCID iD** su <https://orcid.org>: è gratis, cinque minuti, e
-lega in modo univoco ogni pubblicazione a te.
+| Il sito viene ricostruito e messo online | lavoro «Costruisci il sito» + «Metti online» |
+| In fondo a ogni ricerca compare la cronologia delle revisioni | letta dalla storia delle modifiche |
+| Tutti i file ricevono una marca temporale OpenTimestamps | salvata nel ramo `marche-temporali` |
+| Le ricerche con una nuova `versione:` diventano PDF + Release | Zenodo le archivia e assegna il DOI |
 
 ---
 
-## 3. Messa online
+## Già fatto
 
-### Repository
+Questi passaggi li hai completati: non vanno rifatti.
 
-Prima la parte a interfaccia grafica: vai su
-<https://github.com/new>, nome `dietroalmonte`, spunta **Public**
-(la storia delle modifiche visibile a chiunque è parte della prova di
-paternità), e **non** spuntare "Add a README file" — il progetto ce
-l'ha già. Clicca *Create repository*.
-
-GitHub ti mostra una pagina con dei comandi: usa quelli sotto
-"…or push an existing repository from the command line", oppure
-incolla questi in Git Bash, dentro la cartella del progetto
-(sostituisci `fabiocassinelli` con il tuo nome fabiocassinelli GitHub):
-
-```bash
-git init -b main
-git add -A
-git commit -m "Primo impianto del sito"
-git remote add origin https://github.com/fabiocassinelli/dietroalmonte.git
-git push -u origin main
-```
-
-Al primo push, Windows apre una finestra del browser per il login
-GitHub: autorizzi e il push riparte da solo.
-
-### GitHub Pages
-
-Su GitHub: **Settings → Pages → Source: GitHub Actions**.
-Poi **Settings → Pages → Custom domain**: `dietroalmonte.it`, e spunta
-*Enforce HTTPS*.
-
-### DNS
-
-Sul registrar, sposta i nameserver su Cloudflare (gratis). Su Cloudflare:
-
-| Tipo | Nome | Valore | Proxy |
-|---|---|---|---|
-| CNAME | `@` | `fabiocassinelli.github.io` | DNS only |
-| CNAME | `www` | `fabiocassinelli.github.io` | DNS only |
-
-Il file `CNAME` nella radice del repository è già pronto: contiene il
-dominio e Quarto lo copia in `_site/` a ogni build.
-
-Da adesso, **ogni `git push` sul ramo `main` ripubblica il sito**.
+1. **Programmi installati** su Windows: Git for Windows, Quarto, Python,
+   Graphviz, VS Code con l'estensione Quarto, client OpenTimestamps.
+   `quarto preview` funziona.
+2. **Dati personali inseriti** nei file (nome, utente GitHub, dominio, e-mail).
+3. **Messa online predisposta:**
+   - repository pubblico <https://github.com/fabiocassinelli/dietroalmonte>;
+   - GitHub Pages con fonte **GitHub Actions** e dominio personalizzato;
+   - dominio registrato su Aruba, nameserver su Cloudflare;
+   - i due record DNS tolti di proposito: il sito resta irraggiungibile
+     finché non decidi tu (vedi il punto 9).
 
 ---
 
-## 4. Firma e marche temporali
+## Da fare, in quest'ordine
 
-### Firma delle modifiche
+### 1. Sostituisci la vecchia cartella con questa
 
-```bash
-./scripts/setup-firma.sh
-```
+1. Fai una copia della cartella attuale del progetto (copia e incolla sul
+   Desktop): è la tua rete di sicurezza.
+2. Nella cartella del progetto, in Esplora file attiva
+   *Visualizza → Mostra → Elementi nascosti*. Cancella **tutto tranne la
+   cartella `.git`** (è lei che contiene la storia e il collegamento a GitHub).
+3. Estrai lì dentro il contenuto dello zip, in modo che `README.md` e
+   `_quarto.yml` stiano direttamente nella cartella del progetto.
+4. Aggiorna Quarto: scarica l'installer da <https://quarto.org/docs/download/>
+   (versione 1.11 o successiva) e installalo sopra la versione che hai.
+   È la stessa versione usata da GitHub per costruire il sito.
+5. Apri la cartella in VS Code (*File → Apri cartella*). Apri `index.qmd` e
+   premi `Ctrl+Shift+K`: deve comparire l'anteprima con la nuova home.
 
-Lo script configura Git e ti stampa la chiave pubblica da incollare su
-GitHub in **Settings → SSH and GPG keys → New SSH key**, scegliendo
-come tipo **Signing Key** (non Authentication Key).
+Nel pannello *Source Control* vedrai molti file modificati: è giusto così.
+Non premere ancora Commit: prima i punti 2 e 3.
 
-Da quel momento ogni tua modifica compare su GitHub con il badge
-*Verified*: prova che è stata fatta da chi possiede la tua chiave privata.
+### 2. Metti il tuo ORCID
 
-### Marca temporale
+In VS Code premi `Ctrl+Shift+H` (*Cerca e sostituisci nei file*):
+cerca `0009-0009-4455-0112`, sostituisci con il tuo ORCID iD, premi
+*Sostituisci tutto*. Compare in sei file (piè di pagina, Chi sono, Metodo,
+dati per Zenodo).
 
-```bash
-bash scripts/timbra.sh ricerche/2026-01-rossi-scurtabo
-```
+### 3. Attiva la firma delle modifiche
 
-Registra l'impronta dei sorgenti nella blockchain Bitcoin tramite
-OpenTimestamps e crea i file `.ots` accanto a essi. Dopo qualche ora:
+Doppio clic su **`Configura firma.bat`**. Crea una chiave dedicata, dice a
+Git di firmare ogni modifica di questo progetto (anche quelle fatte da
+VS Code) e apre la pagina di GitHub dove incollarla. Lì:
 
-```bash
-ots upgrade ricerche/2026-01-rossi-scurtabo/*.ots
-git add -A && git commit -S -m "Ancoraggio delle marche temporali"
-```
+- *Title*: `Dietro al Monte - firma`
+- *Key type*: **Signing Key** (non «Authentication Key»)
+- *Key*: incolla con `Ctrl+V` (la chiave è già negli appunti) → *Add SSH key*.
 
-Chiunque, per sempre, può verificare con `ots verify file.ots`.
+La chiave non ha password, altrimenti VS Code non potrebbe firmare da
+solo: la protegge l'accesso al tuo utente di Windows. Copia i due file
+indicati dallo script su una chiavetta.
 
-### Marca temporale qualificata (opzionale ma consigliata)
+### 4. Prima pubblicazione di prova
 
-Per le ricerche che consideri importanti, aggiungi una marca temporale
-eIDAS: compra un pacchetto di marche (Aruba, InfoCert, circa 25 € per
-50), scarica il PDF allegato alla Release GitHub e applicagli la marca.
-È l'unico strato con pieno valore probatorio davanti a un giudice.
+1. In VS Code apri *Source Control* (`Ctrl+Shift+G`), scrivi un messaggio
+   (per esempio «Nuovo impianto del sito») e premi **Commit**. In questo
+   progetto Commit invia anche subito a GitHub (Commit e Sync insieme).
+2. Su GitHub apri la scheda **Actions**: il lavoro *Pubblica il sito* deve
+   finire con quattro spunte verdi (Costruisci il sito, Metti online,
+   Marca temporale, Versioni citabili). Dura due o tre minuti.
+3. Nella pagina del repository, accanto al messaggio dell'ultima modifica,
+   deve comparire l'etichetta **Verified**; nel menu dei rami deve esserci
+   il nuovo ramo `marche-temporali`.
 
----
+Il sito resta irraggiungibile (i record DNS non ci sono), ma tutta la
+catena ha già girato una volta. Se un lavoro è rosso, vedi «Se qualcosa
+non va» in fondo.
 
-## 5. Zenodo e DOI
+### 5. Collega Zotero
 
-1. Vai su <https://zenodo.org>, **Log in with GitHub**.
-2. **GitHub** nel menu fabiocassinelli, poi attiva l'interruttore sul repository
-   `dietroalmonte`.
-3. Nel profilo Zenodo, collega il tuo ORCID.
-4. Il file `.zenodo.json` nella radice contiene già i metadati.
+Le citazioni archivistiche prendono i dati da due file che Zotero tiene
+aggiornati da solo.
 
-Da adesso ogni **Release** su GitHub produce automaticamente uno
-snapshot permanente, un DOI di versione e un DOI *concept* che punta
-sempre all'ultima versione.
+1. Installa [Zotero](https://www.zotero.org/download/) e il componente
+   [Better BibTeX](https://retorque.re/zotero-better-bibtex/installation/).
+2. Crea due collezioni: *Fonti d'archivio* e *Bibliografia*.
+3. Clic destro su *Fonti d'archivio* → *Esporta collezione* → formato
+   **Better CSL JSON** → spunta **Keep updated** → salva sopra
+   `fonti/fonti.json`.
+4. Clic destro su *Bibliografia* → *Esporta collezione* → formato
+   **Better BibLaTeX** → spunta **Keep updated** → salva sopra
+   `fonti/bibliografia.bib`.
 
-**Importante:** fai una prima Release *prima* di pubblicare la prima
-ricerca, così ottieni subito il DOI concept da mettere nel piè di pagina.
+**Una voce per unità archivistica** (filza, registro, busta), non per
+documento: il documento si indica nella citazione. Tipo di elemento
+*Manoscritto*, compilato così:
 
----
-
-## 6. Il ciclo di una ricerca
-
-```
-  bash scripts/nuova-ricerca.sh rossi-scurtabo
-        │  apre la cartella, il file da compilare e un ramo dedicato
-        ▼
-  quarto preview             ← scrivi qui, con l'anteprima di fianco
-        │
-        │  git commit -S frequenti durante la scrittura:
-        │  sono la traccia del processo, e valgono più del risultato
-        ▼
-  bash scripts/timbra.sh ricerche/2026-01-rossi-scurtabo
-        │  marca temporale sui sorgenti
-        ▼
-  git checkout main && git merge --no-ff ricerca/rossi-scurtabo
-  git add -A -- . ':!ricerche/*/_revisioni.md'
-  git commit -S -m "Pubblico I Rossi di Scurtabò"
-  git push
-        │  ~90 secondi dopo la ricerca è online
-        ▼
-  git tag -s v1.0-rossi-scurtabo -m "I Rossi di Scurtabò, v1.0"
-  git push --tags
-        │  tag firmato → Release con PDF e .ots → Zenodo assegna il DOI
-        ▼
-  metti il DOI nel front matter, committa e pusha di nuovo
-```
-
-Per **revisionare** una ricerca già pubblicata: modifica, committa e
-pusha, poi ripeti il tag con la versione successiva (`v1.1-...`) e
-pusha i tag. Le versioni precedenti restano su Zenodo con il loro DOI
-e nella cronologia in fondo alla pagina, che si genera da sola dal
-registro delle modifiche.
-
-Per **controllare** che la catena regga:
-
-```bash
-git log -10 --show-signature --format='%h %G? %an %ad %s' --date=short
-find ricerche -name '*.ots' -exec sh -c 'echo; echo "$1"; ots verify "$1"' _ {} \;
-```
-
-Il primo comando mostra se le tue ultime modifiche risultano firmate
-(colonna `%G?` a `G`), il secondo verifica ogni marca temporale che hai
-già registrato.
-
----
-
-## 7. Come si scrive una ricerca
-
-Il problema centrale è tenere insieme due lettori: chi cerca la storia
-del proprio paese e chi verifica le fonti. La soluzione non è scrivere
-due versioni, ma **stratificare lo stesso testo**.
-
-| Strato | Dove sta | Per chi |
-|---|---|---|
-| Racconto | colonna centrale | tutti |
-| Chiarimenti | note a margine (`.column-margin`) | lettore curioso |
-| Citazioni archivistiche | note a piè di pagina automatiche | chi verifica |
-| Regesti e trascrizioni | callout richiudibili | chi studia |
-| Dati grezzi | `dati/`, allegati alla Release | chi prosegue |
-
-Chi legge il centro non inciampa mai nell'apparato. Chi cerca l'apparato
-lo trova tutto.
-
-`scripts/template.qmd` è il modello, con la struttura in sei parti già
-commentata. `ricerche/2026-01-rossi-scurtabo/` è un esempio completo e
-funzionante di tutto: note, regesti, albero, mappa, grafico. Leggilo
-prima di scrivere la tua prima ricerca, poi cancellalo.
-
-### Citare un documento
-
-Citazione automatica: Pandoc la trasforma da sola in nota a piè di pagina.
-
-```markdown
-...compare un pascolo in monte Pennae.[@ASGe_NA_1123, doc. 47 (1432 aprile 12)]
-```
-
-produce
-
-> ASGe, *Notai Antichi*, 1123, notaio Antonio da Cogorno, doc. 47 (1432 aprile 12).
-
-Alla seconda citazione della stessa unità la nota si accorcia da sola
-(`ASGe, *Notai Antichi*, 1123, doc. 51`), alla ripetizione immediata
-diventa `Ibid.` Lo stile che produce questa forma è
-`assets/csl/dietroalmonte-archivistico.csl`, scritto per questo sito e
-modificabile: vedi `assets/csl/LEGGIMI.md`.
-
-Nota discorsiva, quando devi commentare e non solo citare:
-
-```markdown
-Il pascolo va al solo primogenito.[^pascolo]
-
-[^pascolo]: A fronte di una divisione per il resto egualitaria,
-questo suggerisce che il bene fosse indivisibile.
-```
-
-### Nota a margine
-
-```markdown
-::: {.column-margin}
-Il confine fra Repubblica di Genova e feudi Landi corre sul crinale
-dal 1257.
-:::
-```
-
-### Regesto e trascrizione
-
-```markdown
-::: {.callout-note collapse="true" appearance="simple" class="trascrizione"}
-## Regesto e trascrizione — ASGe, NA 1123, doc. 47
-
-**1432 aprile 12, Varese.**
-
-*Regesto.* ...
-
-*Trascrizione.*
-
-> In nomine Domini amen...
-:::
-```
-
-Sta chiuso per default: c'è per chi lo cerca, non spaventa gli altri.
-
----
-
-## 8. Le fonti e Zotero
-
-Due file bibliografici, per due mondi diversi:
-
-- `fonti/fonti.json` — **unità archivistiche** in formato CSL-JSON, che
-  mappa correttamente i campi d'archivio (`archive`, `archive_location`,
-  `archive-place`).
-- `fonti/bibliografia.bib` — **bibliografia a stampa** in BibTeX.
-
-### Il criterio che conta
-
-Crea in Zotero **un elemento per unità archivistica** (filza, registro,
-busta), non per singolo documento. Il singolo documento lo indichi nel
-*locator* della citazione:
-
-```markdown
-[@ASGe_NA_1123, doc. 47 (1432 aprile 12)]
-```
-
-Così cinquecento rogiti di una filza non diventano cinquecento voci
-bibliografiche.
-
-### Configurare Zotero
-
-Tipo di elemento: **Manoscritto**. Compila così:
-
-| Campo in Zotero | Contenuto | Esempio |
+| Campo in Zotero | Contenuto | Esempio (inventato) |
 |---|---|---|
 | Titolo | fondo o serie | `Notai Antichi` |
 | Tipo | tipologia | `Registro notarile` |
 | Archivio | **sigla** dell'istituto | `ASGe` |
 | Segnatura | unità | `1123` |
-| Collocazione nell'archivio | intitolazione dell'unità | `notaio Antonio da Cogorno` |
+| Collocazione nell'archivio | intitolazione dell'unità | `notaio X` |
 | Data | anno iniziale | `1428` |
-| Extra | nome per esteso e annotazioni | `publisher: Archivio di Stato di Genova`<br>`note: Estremi 1428-1441. Lacuna 1630-1638.` |
+| Extra | `publisher: Archivio di Stato di Genova` e, a capo, `note: Estremi 1428-1441.` | |
 
-Il campo **Extra** accetta la sintassi `variabile-csl: valore`: è il modo
-di aggiungere campi che il tipo *Manoscritto* non prevede.
+Chiave di citazione parlante (campo *Citation key*): `ASGe_NA_1123`.
+Dettagli sullo stile: `assets/csl/LEGGIMI.md`.
 
-Poi:
+### 6. Collega Zenodo (prima di creare la prima versione citabile)
 
-1. Installa [Better BibTeX](https://retorque.re/zotero-better-bibtex/).
-2. Assegna chiavi di citazione parlanti: `ASGe_NA_1123`.
-3. Clic destro sulla collezione → *Export Collection* → formato
-   **CSL JSON** → spunta **Keep updated** → salva su `fonti/fonti.json`.
+1. Vai su <https://zenodo.org> → *Log in* → **GitHub**.
+2. Menu del profilo (in alto a destra) → **GitHub** → **Sync now**.
+3. Trova `fabiocassinelli/dietroalmonte` e attiva l'interruttore.
+4. Menu del profilo → *Linked accounts*: collega il tuo **ORCID**.
 
-Da qui in poi il file si aggiorna da solo a ogni modifica in Zotero.
+Da quel momento ogni Release creata da GitHub viene archiviata da Zenodo
+con un DOI. Va fatto **prima** della prima Release: quelle precedenti
+Zenodo non le vede.
 
-### Le tue fotografie
+### 7. Completa le pagine fisse
 
-Non finiscono nel repository (sono troppe e troppo pesanti), ma il loro
-nome deve rendere ogni nota ritrovabile in due secondi:
+Doppio clic su **`Controlla prima di pubblicare.bat`**: elenca tutti i
+riquadri «DA COMPLETARE». Sono promemoria con l'esempio esatto di che cosa
+scrivere; si vedono solo nell'anteprima e **sul sito pubblico vengono tolti
+da soli**, quindi non c'è fretta. I più importanti prima di andare online:
 
-```
-ASGe_NA_1123_doc047_c088v.jpg
-ISTITUTO_FONDO_UNITÀ_DOCUMENTO_CARTA.jpg
-```
+- `metodo.qmd`: conferma i criteri di edizione;
+- `fonti/index.qmd`: sigle, schede dei fondi, paragrafo sulle riproduzioni;
+- `luoghi/` e `famiglie/`: le schede.
 
-Fallo ora, non fra tre anni.
+### 8. Pubblica la prima ricerca: «Il delitto di Chilinella»
 
-### Sulla pubblicabilità delle immagini
+1. Scrivi il testo (in Word o nel `.qmd`: vedi [GUIDA.md](GUIDA.md)) e
+   sostituisci ogni riquadro DA COMPLETARE con il tuo materiale.
+2. Quando non ne resta nessuno, nella scheda in alto cancella la riga
+   `draft: true` → Commit. La ricerca è pubblicata.
+3. Quando la consideri citabile, nella scheda togli il `#` davanti a
+   `versione: "1.0"` → Commit. GitHub crea da solo il PDF, la Release
+   e il deposito su Zenodo.
+4. Dopo qualche minuto apri Zenodo → menu del profilo → *GitHub*: accanto
+   al repository c'è il DOI. Copialo nella scheda (`doi: "10.5281/zenodo.NNNNNNN"`)
+   → Commit. Ora compare nel riquadro *Citazione*.
 
-L'art. 108 commi 3 e 3-bis del Codice dei beni culturali, come
-modificato dalla l. 124/2017, e il D.M. 108/2024 rendono libera la
-divulgazione di immagini di documenti d'archivio legittimamente
-acquisite, senza scopo di lucro, su pubblicazioni online ad accesso
-gratuito e prive di pubblicità. Serve dare comunicazione scritta
-all'istituto, citare la segnatura esatta e consegnare copia
-dell'elaborato. **Verifica sempre con il singolo archivio**: le prassi
-variano. Tieni traccia delle comunicazioni inviate nella tabella in
-`fonti/index.qmd`.
+Per una versione riveduta: correggi, cambia in `versione: "1.1"`, Commit.
 
-Questo è anche il motivo per cui il sito non ha pubblicità e non va
-messa: ti tiene nel regime più favorevole.
+### 9. Riattiva il dominio
 
----
+Quando il sito è pronto per essere visto:
 
-## 9. Mappe, alberi, grafici
+1. **Cloudflare** → <https://dash.cloudflare.com> → `dietroalmonte.it` →
+   **DNS → Records → Add record**, due volte:
 
-### Alberi genealogici — Graphviz
+   | Type | Name | Target | Proxy status |
+   |---|---|---|---|
+   | CNAME | `@` | `fabiocassinelli.github.io` | **DNS only** (nuvola grigia) |
+   | CNAME | `www` | `fabiocassinelli.github.io` | **DNS only** (nuvola grigia) |
 
-Tienili in Graphviz, non in un'immagine: è testo, sta nel repository, se
-ne vede il diff, non si rompe mai. Vedi l'esempio nella ricerca modello.
+   La nuvola deve restare grigia: con quella arancione GitHub non riesce a
+   rilasciare il certificato HTTPS.
+2. **GitHub** → repository → **Settings → Pages**. In *Custom domain* deve
+   esserci `dietroalmonte.it` (se il campo è vuoto scrivilo e premi *Save*).
+   Aspetta la scritta *DNS check successful*: di solito pochi minuti.
+3. Nella stessa pagina spunta **Enforce HTTPS**. Se la casella non è ancora
+   attiva, GitHub sta preparando il certificato: può servire fino a un giorno.
+4. Apri <https://dietroalmonte.it>.
 
-Per la base dati usa [Gramps](https://gramps-project.org): esporta
-GEDCOM, e da lì genera il DOT dei rami che ti servono nell'articolo.
+**Per rimetterlo offline:** cancella di nuovo i due record su Cloudflare.
+Il file `CNAME` del progetto non c'entra: con la fonte «GitHub Actions»
+GitHub lo ignora, e il dominio vale solo se è scritto in *Settings → Pages*.
+Ricostruire il sito, quindi, non lo rimette online né lo toglie.
 
-### Mappe — Leaflet + GeoJSON
+Ricorda che il repository è pubblico: i testi, bozze comprese, sono
+leggibili su GitHub anche quando il sito è offline. Fa parte della prova di
+paternità (la storia delle modifiche è visibile a tutti).
 
-Metti i punti in `dati/luoghi.geojson` (da QGIS) e aggiungi
-`include-in-header: ../../assets/leaflet.html` al front matter. Il
-blocco di codice è nella ricerca modello, pronto da copiare.
+### 10. Facoltativi
 
-Idee che valgono più di una mappa di puntini:
-
-- **confini ricostruiti dai rogiti** — i *coheret ab uno latere*
-  digitalizzati in QGIS sul catasto storico, sovrapposti all'ortofoto
-- **bacino matrimoniale** — archi fra i paesi di origine degli sposi
-- **layer storici** — il Geoportale della Regione Liguria espone in WMS
-  l'IGM storico e i catasti
-
-### Grafici — Observable Plot
-
-Blocchi ```` ```{ojs} ````, senza dipendenze da installare: girano nel
-browser. Esempio nella ricerca modello.
-
-### Se non vuoi pubblicare le foto dei documenti
-
-Cose che sono **opera tua al cento per cento**:
-
-- il **signum tabellionis ricalcato in SVG** — bellissimo, unico, e
-  l'opera derivata è tua
-- gli **stemmi ridisegnati** secondo la blasonatura
-- le **tavole paleografiche**: la stessa lettera in mani diverse
-- le **trascrizioni diplomatiche**
-- le tue **fotografie dei luoghi oggi**
-- la **cartografia storica fuori diritti**
-
----
-
-## 10. Riferimento dei comandi
-
-Tutti da lanciare in Git Bash, dentro la cartella del progetto.
-
-| Comando | Effetto |
-|---|---|
-| `bash scripts/nuova-ricerca.sh x` | apre cartella, file e ramo di una nuova ricerca |
-| `quarto preview` | anteprima locale con ricarica automatica |
-| `quarto render` | costruisce il sito in `_site/` |
-| `bash scripts/timbra.sh ricerche/x` | marca temporale OpenTimestamps sui sorgenti |
-| `git add -A -- . ':!ricerche/*/_revisioni.md'`<br>`git commit -S -m "..."`<br>`git push` | commit firmato + push → sito online |
-| `git tag -s v1.0-x -m "..."`<br>`git push --tags` | tag firmato → Release → DOI Zenodo |
-| `git log --show-signature ...` (sezione 6) | verifica firme e marche temporali |
+- **Marca temporale qualificata (eIDAS).** Per una ricerca a cui tieni:
+  scarica il PDF dalla Release su GitHub e applicagli una marca temporale
+  qualificata comprata da un prestatore italiano (per esempio Aruba o
+  InfoCert, a pacchetti). Conserva il file marcato e scrivilo in fondo
+  alla ricerca. È l'unico strato che la legge presume esatto fino a prova
+  contraria; gli altri si verificano tecnicamente.
+- **Software Heritage.** Su <https://archive.softwareheritage.org/save/>
+  incolla l'indirizzo del repository: ne conserva una copia indipendente
+  da GitHub.
 
 ---
 
-## 11. Struttura delle cartelle
+## Dove sta che cosa
 
 ```
 dietroalmonte/
-├─ _quarto.yml              configurazione del sito
-├─ index.qmd                home
-├─ metodo.qmd               criteri di edizione + catena di prova
-├─ chi-sono.qmd
+├─ README.md, GUIDA.md           istruzioni
+├─ Converti bozza Word.bat       ┐
+├─ Nuova ricerca.bat             │ doppio clic
+├─ Controlla prima di pubblicare.bat
+├─ Configura firma.bat           ┘
+├─ index.qmd, metodo.qmd, chi-sono.qmd
 ├─ ricerche/
-│  ├─ index.qmd             elenco automatico + feed RSS
-│  ├─ _metadata.yml         impostazioni valide per tutte le ricerche
-│  └─ 2026-01-rossi-scurtabo/
-│     ├─ index.qmd          la ricerca (esempio completo)
-│     ├─ _revisioni.md      generato dal git log
-│     ├─ dati/              GeoJSON, DOT, CSV
-│     └─ immagini/
-├─ luoghi/                  schede dei paesi
-├─ famiglie/                schede dei cognomi
-├─ fonti/
-│  ├─ index.qmd             abbreviazioni + schede dei fondi
-│  ├─ fonti.json            unità archivistiche (CSL-JSON, da Zotero)
-│  └─ bibliografia.bib      bibliografia a stampa (da Zotero)
-├─ assets/
-│  ├─ theme.scss            palette ardesia/carta/ocra, tipografia
-│  ├─ fonts.html            Fraunces + Spectral
-│  ├─ leaflet.html          da includere solo nelle pagine con mappa
-│  └─ csl/
-│     └─ dietroalmonte-archivistico.csl   stile citazionale su misura
-├─ scripts/
-│  ├─ revisioni.py          cronologia revisioni (pre-render)
-│  ├─ nuova-ricerca.sh
-│  ├─ timbra.sh
-│  ├─ setup-firma.sh
-│  └─ template.qmd          modello di ricerca
-└─ .github/workflows/
-   ├─ deploy.yml            build + pubblicazione a ogni push
-   └─ rilascio.yml          PDF + .ots + Release a ogni tag
+│  └─ 2026-09-delitto-chilinella-1577/
+│     ├─ index.qmd               la ricerca (scheda in alto + testo)
+│     ├─ bozza.docx              la bozza di Word, se la usi
+│     ├─ immagini/  dati/
+│     └─ _revisioni.md           vuoto, ma deve esistere: lo riempie GitHub
+├─ luoghi/  famiglie/  fonti/    schede e fonti (fonti.json, bibliografia.bib)
+├─ _modelli/                     modelli ed esempio dei Rossi: mai pubblicati
+├─ assets/                       grafica, caratteri, stile delle citazioni
+├─ scripts/                      i programmi usati dai .bat e da GitHub
+├─ .vscode/                      impostazioni e attività di VS Code
+└─ .github/workflows/            che cosa fa GitHub a ogni Commit
 ```
-
----
 
 ## Se qualcosa non va
 
-**`could not find file _revisioni.md`** — Quarto risolve gli `include`
-prima di eseguire lo script che genera la cronologia. Ogni cartella di
-ricerca deve contenere un `_revisioni.md`, anche vuoto;
-`scripts/nuova-ricerca.sh` lo
-crea da sé. Se manca: `touch ricerche/NOME/_revisioni.md`.
+**Il lavoro «Costruisci il sito» è rosso.** Aprilo dalla scheda *Actions*:
+il passo *Controlla i testi* dice in italiano che cosa non va. I casi
+sono tre: una pagina non più bozza che contiene ancora segnaposto o la
+scritta DA COMPLETARE fuori da un riquadro; una citazione `[@chiave]` che
+non esiste in Zotero; una `versione:` scritta male. Correggi e rifai Commit.
 
-**La mappa non compare** — manca
-`include-in-header: ../../assets/leaflet.html` nel front matter, oppure
-il percorso del GeoJSON è sbagliato: è relativo al file `index.qmd`,
-quindi `dati/luoghi.geojson`.
+**`could not find file _revisioni.md`.** Ogni cartella in `ricerche/` deve
+contenere un file `_revisioni.md`, anche vuoto. «Nuova ricerca» e
+«Controlla prima di pubblicare» lo creano da soli.
 
-**L'albero genealogico non si disegna** — Graphviz non è installato, o
-è installato ma non era nel PATH quando hai riaperto Git Bash l'ultima
-volta: rivedi il punto 4 della sezione 1, poi chiudi e riapri Git Bash
-e prova `dot -V`.
+**L'etichetta Verified non compare.** L'e-mail delle modifiche deve essere
+una delle e-mail verificate del tuo account GitHub, e la chiave va caricata
+come *Signing Key*. Rilancia `Configura firma.bat` per rivedere i dati.
 
-**Le note escono in forma inglese** — la chiave `csl:` in `_quarto.yml`
-non punta a `assets/csl/dietroalmonte-archivistico.csl`.
+**Commit dà un errore di firma.** Lo script non ha trovato o non ha potuto
+usare la chiave. Rilancia `Configura firma.bat`. Per togliere la firma in
+attesa di capire, incolla nel terminale di VS Code
+`git config --local commit.gpgsign false` (dice a Git di non firmare in
+questo progetto).
 
-**Una citazione compare come `[@chiave]`** — la chiave non esiste in
-`fonti/fonti.json` né in `fonti/bibliografia.bib`, oppure c'è un errore
-di sintassi JSON. Controlla con
-`python3 -c "import json;json.load(open('fonti/fonti.json'))"`.
+**Il lavoro «Marca temporale» è rosso.** I server di OpenTimestamps non
+hanno risposto. Il sito è stato pubblicato lo stesso. *Actions → Pubblica
+il sito → Run workflow* riprova.
 
-**Il sito non si aggiorna dopo il push** — guarda la scheda *Actions*
-su GitHub: l'errore è lì. Quasi sempre è un front matter con
-l'indentazione sbagliata.
+**La Release c'è ma Zenodo non mostra il DOI.** Controlla che
+l'interruttore del punto 6 fosse attivo prima della Release. Su Zenodo,
+menu del profilo → *GitHub* → nome del repository: lì ci sono gli eventuali
+errori.
 
-## Le prime quattro settimane
+**Una citazione compare come `[@chiave]` o `?chiave`.** La chiave non
+esiste in `fonti/fonti.json` né in `fonti/bibliografia.bib`: controlla in
+Zotero la *Citation key* e che l'esportazione automatica sia attiva.
 
-| | |
-|---|---|
-| **1** | ORCID, dominio, repository online, `quarto preview` funzionante, firma configurata |
-| **2** | `metodo.qmd` e `fonti/index.qmd` compilati davvero. Zotero collegato. Foto rinominate |
-| **3** | Zenodo collegato, prima Release, DOI concept nel piè di pagina. Comunicazioni agli archivi |
-| **4** | **Pubblica la prima ricerca.** Scegline una corta e matura, non l'opera maggiore: serve a far girare la catena almeno una volta intera |
+**Le attività o i `.bat` dicono che non trovano Python.** Reinstalla Python
+da <https://www.python.org/downloads/windows/> spuntando *Add python.exe
+to PATH*, poi chiudi e riapri VS Code.
 
-Poi una ricerca al mese, e le schede di luoghi e famiglie che crescono
-per accumulo.
-
-## Nota sulla direzione visiva
-
-Grigio d'ardesia per la struttura, carta fredda per il fondo, un solo
-accento ocra preso dalle rubriche dei registri, riservato ai link e ai
-richiami di nota — così il colore segnala "qui c'è una prova", e non
-decora. Fraunces per i titoli, Spectral per il testo. Se vuoi cambiare
-tutto, i valori stanno nei primi trenta righi di `assets/theme.scss`.
+**Voglio fare Commit senza pubblicare subito.** In `.vscode/settings.json`
+cancella la riga `"git.postCommitCommand": "sync"`: Commit tornerà a
+registrare soltanto, e per inviare premerai *Sync Changes*.

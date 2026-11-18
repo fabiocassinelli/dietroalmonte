@@ -1,0 +1,15 @@
+# Fine riga coerenti fra Windows e GitHub
+* text=auto
+*.bat  text eol=crlf
+*.py   text eol=lf
+*.yml  text eol=lf
+*.qmd  text eol=lf
+*.md   text eol=lf
+*.json text eol=lf
+*.docx binary
+*.woff2 binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.pdf  binary
+*.ots  binary
